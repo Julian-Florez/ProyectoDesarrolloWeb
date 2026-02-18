@@ -1,0 +1,105 @@
+@font-face {
+    font-family: "Aerosoldier-Basic";
+    src: url("../assets/fonts/aerosoldier/AerosoldierBasic.otf");
+}
+@font-face {
+    font-family: "Aerosoldier-Selected";
+    src: url("../assets/fonts/aerosoldier/AerosoldierSelected.otf");
+}
+@font-face {
+    font-family: "DigitalDisco-Basic";
+    src: url("../assets/fonts/digital_disco/DigitalDiscoBasic.ttf");
+}
+@font-face {
+    font-family: "DigitalDisco-Selected";
+    src: url("../assets/fonts/digital_disco/DigitalDiscoSelected.ttf");
+}
+body{
+    background-color: #F2F2F2;
+    background-image: url("../assets/img/back.jpg");
+}
+
+#title {
+    font-size: 7em;
+    color: #2A0800;
+    text-align: center;
+    margin-top: 20px;
+}
+#menu-graffiti{
+    font-family: "Aerosoldier-Basic";
+}
+#menu-graffiti:hover {
+    font-family: "Aerosoldier-Selected";
+}
+#menu-pixel{
+    font-family: "DigitalDisco-Basic";
+}
+#menu-pixel:hover {
+    font-family: "DigitalDisco-Selected";
+}
+
+.menu{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    gap:20px;
+}
+.menu > a > li {
+    text-align: center;
+    padding: 14px 16px;
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 20px;
+    width: 20%;
+    min-width: 200px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+.menu-item{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+
+.menu-item:hover{
+    text-shadow: 0;
+    color: #ffffff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000;
+    transition: all 0.3s ease;
+}
+
+
+.menu-item > li {
+    position: relative;
+    z-index: 1;
+}
+.menu-item > li > img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.5s ease;
+}
+.menu-item:hover img {
+    transform: translate(-50%, -50%) scale(0.8);
+    opacity: 1;
+}
+
+.menu > a > li:hover {
+    transition: all 0.3s ease;
+    transform: scale(1.5);
+}
+
+.menu > a {
+    text-decoration: none;
+    color: #000000;
+    font-size: 3em;
+}
+
