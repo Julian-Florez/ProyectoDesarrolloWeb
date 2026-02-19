@@ -1,51 +1,109 @@
 @font-face {
-    font-family: "Aerosoldier-Basic";
-    src: url("../assets/fonts/aerosoldier/AerosoldierBasic.otf");
+    font-family: "graffiti-Basic";
+    src: url("../assets/fonts/graffiti/graffitiBasic.otf");
 }
 @font-face {
-    font-family: "Aerosoldier-Selected";
-    src: url("../assets/fonts/aerosoldier/AerosoldierSelected.otf");
+    font-family: "graffiti-Selected";
+    src: url("../assets/fonts/graffiti/graffitiSelected.otf");
 }
 @font-face {
-    font-family: "DigitalDisco-Basic";
-    src: url("../assets/fonts/digital_disco/DigitalDiscoBasic.ttf");
+    font-family: "pixel-Basic";
+    src: url("../assets/fonts/pixel/pixelBasic.ttf");
 }
 @font-face {
-    font-family: "DigitalDisco-Selected";
-    src: url("../assets/fonts/digital_disco/DigitalDiscoSelected.ttf");
+    font-family: "pixel-Selected";
+    src: url("../assets/fonts/pixel/pixelSelected.ttf");
+}
+@font-face {
+    font-family: "aero-Basic";
+    src: url("../assets/fonts/aero/aeroBasic.otf");
+}
+@font-face {
+    font-family: "aero-Selected";
+    src: url("../assets/fonts/aero/aeroSelected.otf");
+}
+@font-face {
+    font-family: "grecia-Basic";
+    src: url("../assets/fonts/grecia/greciaBasic.ttf");
+}
+@font-face {
+    font-family: "grecia-Selected";
+    src: url("../assets/fonts/grecia/greciaSelected.ttf");
+}
+@font-face {
+    font-family: "comic-Basic";
+    src: url("../assets/fonts/comic/comicBasic.otf");
+}
+@font-face {
+    font-family: "comic-Selected";
+    src: url("../assets/fonts/comic/comicSelected.otf");
+}
+@font-face {
+    font-family: "eighty-Basic";
+    src: url("../assets/fonts/eighty/eightySelected.otf");
+}
+@font-face {
+    font-family: "eighty-Selected";
+    src: url("../assets/fonts/eighty/eightySelected.otf");
 }
 body{
     background-color: #F2F2F2;
-    background-image: url("../assets/img/back.jpg");
+    /*background-image: url("../assets/img/background.png");*/
+    background-image: url("../assets/img/back2.jpg");
+    background-size: cover;
 }
 
 #title {
     font-size: 7em;
-    color: #2A0800;
+    color: #000000;
+    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
     text-align: center;
     margin-top: 20px;
 }
 #menu-graffiti{
-    font-family: "Aerosoldier-Basic";
+    font-family: "graffiti-Basic";
 }
 #menu-graffiti:hover {
-    font-family: "Aerosoldier-Selected";
+    font-family: "graffiti-Selected";
 }
 #menu-pixel{
-    font-family: "DigitalDisco-Basic";
+    font-family: "pixel-Basic";
 }
 #menu-pixel:hover {
-    font-family: "DigitalDisco-Selected";
+    font-family: "pixel-Selected";
+}
+#menu-aero{
+    font-family: "aero-Basic";
+}
+#menu-aero:hover {
+    font-family: "aero-Selected";
+}
+#menu-grecia{
+    font-family: "grecia-Basic";
+}
+#menu-grecia:hover {
+    font-family: "grecia-Selected";
+}
+#menu-comic{
+    font-family: "comic-Basic";
+}
+#menu-comic:hover {
+    font-family: "comic-Selected";
+}
+
+#menu-eighty{
+    font-family: "eighty-Basic";
+}
+#menu-eighty:hover {
+    font-family: "eighty-Selected";
 }
 
 .menu{
     list-style-type: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-evenly;
-    flex-wrap: wrap;
-    gap:20px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    justify-content: center;
 }
 .menu > a > li {
     text-align: center;
@@ -67,9 +125,8 @@ body{
 
 
 .menu-item:hover{
-    text-shadow: 0;
     color: #ffffff;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, #000 10px 10px 10px;
     transition: all 0.3s ease;
 }
 
@@ -79,6 +136,7 @@ body{
     z-index: 1;
 }
 .menu-item > li > img {
+    width: 400px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -88,7 +146,7 @@ body{
     transition: all 0.5s ease;
 }
 .menu-item:hover img {
-    transform: translate(-50%, -50%) scale(0.8);
+    transform: translate(-50%, -50%) scale(0.7);
     opacity: 1;
 }
 
@@ -103,3 +161,42 @@ body{
     font-size: 3em;
 }
 
+.menu {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+    row-gap: 100px;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    justify-content: center;
+}
+
+@media (max-width: 600px) {
+    .menu {
+        grid-template-columns: 1fr;
+    }
+}
+
+.title-container {
+    height: 15em;
+}
+
+body:has(#menu-graffiti:hover) #title {
+    font-family: "graffiti-Basic";
+}
+body:has(#menu-pixel:hover) #title {
+    font-family: "pixel-Basic";
+}
+body:has(#menu-aero:hover) #title {
+    font-family: "aero-Basic";
+}
+body:has(#menu-grecia:hover) #title {
+    font-family: "grecia-Basic";
+}
+body:has(#menu-comic:hover) #title {
+    font-family: "comic-Basic";
+}
+body:has(#menu-eighty:hover) #title {
+    font-family: "eighty-Basic";
+}
