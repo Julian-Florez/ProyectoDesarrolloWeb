@@ -115,21 +115,27 @@ body{
     width: 20%;
     min-width: 200px;
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    transition: all 0.3s ease;
 }
+
+.menu > a > li:hover {
+    transition: all 0.3s ease;
+    transform: scale(1.5);
+}
+
 .menu-item{
     display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
+    transition: all 0.3s ease;
 }
-
 
 .menu-item:hover{
     color: #ffffff;
     text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, #000 10px 10px 10px;
     transition: all 0.3s ease;
 }
-
 
 .menu-item > li {
     position: relative;
@@ -148,11 +154,6 @@ body{
 .menu-item:hover img {
     transform: translate(-50%, -50%) scale(0.7);
     opacity: 1;
-}
-
-.menu > a > li:hover {
-    transition: all 0.3s ease;
-    transform: scale(1.5);
 }
 
 .menu > a {
