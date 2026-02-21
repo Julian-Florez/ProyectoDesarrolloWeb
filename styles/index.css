@@ -56,15 +56,18 @@
 body {
     margin: 0;
     background-color: #fefae0;
-    background-image: url("../assets/img/background.png");
-    background-size: cover;
-    transition: background-image 0.5s ease;
+    background-image: url("../assets/img/background.svg");
+    background-size: 200px;
+    background-repeat: repeat;
+    background-blend-mode: soft-light;
+    transition: all 0.5s ease;
 }
 
 /* ===== Title and Navigation ===== */
 #title {
     font-size: 3em;
     color: #fefae0;
+    text-shadow: -5px -5px 10px #000, 5px -5px 10px #000, -5px 5px 10px #000, 5px 5px 10px #000;
     text-align: center;
     margin: 50px 0 0 0;
     font-family: "amoera";
@@ -81,12 +84,12 @@ body {
     flex-direction: column;
     justify-content: center;
     z-index: 99;
+    transition: background-color 0.5s ease;
 }
 
 #navbar {
     text-decoration: none;
     font-family: "symbols";
-    color: #dda15e;
     font-size: 2em;
     display: flex;
     justify-content: center;
@@ -96,7 +99,7 @@ body {
 }
 
 #navbar a {
-    color: #dda15e;
+    color: #fefae0;
     text-decoration: none;
     transition: all 0.3s ease;
 }
@@ -108,7 +111,7 @@ body {
 }
 
 #navbar > li:hover {
-    background-color: #283618;
+    background-color: #00000090;
     border-radius: 20px;
 }
 
@@ -127,7 +130,10 @@ body {
 /* ===== Menu ===== */
 #menu-container {
     background: #606c38aa;
-    backdrop-filter: blur(0);
+    backdrop-filter: blur(30px) invert(10%);
+    background-size: 200px;
+    background-repeat: repeat;
+    background-blend-mode: overlay;
     border-radius: 50px;
     margin: 50px;
     padding-top: 50px;
@@ -154,7 +160,6 @@ body {
     text-align: center;
     align-content: center;
     background: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 50px;
     position: relative;
@@ -187,7 +192,7 @@ body {
 }
 
 .menu > li:hover {
-    background-color: #00000000;
+    background-color: #00000020;
     transform: scale(1.20);
     transition: all 0.3s ease;
 }
@@ -207,50 +212,64 @@ body {
 
 /* ===== Background Pictures ===== */
 body:has(.menu > li:hover) #menu-container {
-    background-color: #ffffff40;
-    backdrop-filter: blur(30px);
+    background-color: #00000040;
     transition: all 0.5s ease;
 }
 
-body:has(#menu-graffiti-li:hover) {
-    background-image: url("../assets/img/graffiti/wallpaper.jpg");
+body:has(.menu > li:hover) .title-container {
+    background-color: #00000040;
+    transition: all 0.5s ease;
+}
+
+body:has(#menu-graffiti-li:hover){
+    background-image: url("../assets/img/graffiti/doodles.svg");
+    background-color: #bd4a92;
     opacity: 1;
 }
 body:has(#menu-pixel-li:hover) {
-    background-image: url("../assets/img/pixel/wallpaper.png");
+    background-image: url("../assets/img/pixel/doodles.svg");
+    background-color: #0566ec;
     opacity: 1;
 }
 body:has(#menu-aero-li:hover) {
-    background-image: url("../assets/img/aero/wallpaper.png");
+    background-image: url("../assets/img/aero/doodles.svg");
+    background-color: #d5f74c;
     opacity: 1;
 }
 body:has(#menu-grecia-li:hover){
-    background-image: url("../assets/img/grecia/wallpaper.jpg");
+    background-image: url("../assets/img/grecia/doodles.svg");
+    background-color: #937f66;
     opacity: 1;
 }
 body:has(#menu-comic-li:hover) {
-    background-image: url("../assets/img/comic/wallpaper.jpg");
+    background-image: url("../assets/img/comic/doodles.svg");
+    background-color: #feaa04;
     opacity: 1;
 }
 body:has(#menu-eighty-li:hover) {
-    background-image: url("../assets/img/eighty/wallpaper.jpg");
+    background-image: url("../assets/img/eighty/doodles.svg");
+    background-color: #fe94b5;
     opacity: 1;
 }
 body:has(#menu-retroFuture-li:hover) {
-    background-image: url("../assets/img/retroFuture/wallpaper.jpg");
+    background-image: url("../assets/img/retroFuture/doodles.svg");
+    background-color: #9ac9af;
     opacity: 1;
 }
 body:has(#menu-cyberpunk-li:hover) {
-    background-image: url("../assets/img/cyberpunk/wallpaper.jpg");
+    background-image: url("../assets/img/cyberpunk/doodles.svg");
+    background-color: #e5a7e9;
     opacity: 1;
 }
 body:has(#menu-impresionism-li:hover) {
-    background-image: url("../assets/img/impresionism/wallpaper.jpg");
+    background-image: url("../assets/img/impresionism/doodles.svg");
+    background-color: #d4a851;
     opacity: 1;
 }
 
 body:has(#menu-ukiyoe-li:hover) {
-    background-image: url("../assets/img/ukiyoe/wallpaper.jpg");
+    background-image: url("../assets/img/ukiyoe/doodles.svg");
+    background-color: #98be8d;
     opacity: 1;
 }
 
