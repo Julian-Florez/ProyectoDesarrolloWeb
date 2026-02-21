@@ -1,203 +1,262 @@
+/* ===== Font Faces ===== */
 @font-face {
-    font-family: "graffiti-Basic";
-    src: url("../assets/fonts/graffiti/graffitiBasic.otf");
+    font-family: "graffiti";
+    src: url("../assets/fonts/graffiti/graffiti.otf");
 }
 @font-face {
-    font-family: "graffiti-Selected";
-    src: url("../assets/fonts/graffiti/graffitiSelected.otf");
+    font-family: "pixel";
+    src: url("../assets/fonts/pixel/pixel.ttf");
 }
 @font-face {
-    font-family: "pixel-Basic";
-    src: url("../assets/fonts/pixel/pixelBasic.ttf");
+    font-family: "aero";
+    src: url("../assets/fonts/aero/aero.otf");
 }
 @font-face {
-    font-family: "pixel-Selected";
-    src: url("../assets/fonts/pixel/pixelSelected.ttf");
+    font-family: "grecia";
+    src: url("../assets/fonts/grecia/grecia.ttf");
 }
 @font-face {
-    font-family: "aero-Basic";
-    src: url("../assets/fonts/aero/aeroBasic.otf");
+    font-family: "comic";
+    src: url("../assets/fonts/comic/comic.otf");
 }
 @font-face {
-    font-family: "aero-Selected";
-    src: url("../assets/fonts/aero/aeroSelected.otf");
+    font-family: "eighty";
+    src: url("../assets/fonts/eighty/eighty.otf");
 }
 @font-face {
-    font-family: "grecia-Basic";
-    src: url("../assets/fonts/grecia/greciaBasic.ttf");
+    font-family: "retroFuture";
+    src: url("../assets/fonts/retroFuture/retroFuture.ttf");
 }
 @font-face {
-    font-family: "grecia-Selected";
-    src: url("../assets/fonts/grecia/greciaSelected.ttf");
+    font-family: "cyber";
+    src: url("../assets/fonts/cyberpunk/cyber.ttf");
 }
 @font-face {
-    font-family: "comic-Basic";
-    src: url("../assets/fonts/comic/comicBasic.otf");
+    font-family: "impressionism";
+    src: url("../assets/fonts/impressionism/impressionism.ttf");
 }
 @font-face {
-    font-family: "comic-Selected";
-    src: url("../assets/fonts/comic/comicSelected.otf");
+    font-family: "ukiyoe";
+    src: url("../assets/fonts/ukiyoe/ukiyoe.ttf");
 }
 @font-face {
-    font-family: "eighty-Basic";
-    src: url("../assets/fonts/eighty/eightySelected.otf");
+    font-family: "amoera";
+    src: url("../assets/fonts/title/amoera.ttf");
 }
 @font-face {
-    font-family: "eighty-Selected";
-    src: url("../assets/fonts/eighty/eightySelected.otf");
+    font-family: "symbols";
+    src: url("../assets/fonts/title/symbols.ttf");
 }
-body{
-    background-color: #F2F2F2;
-    /*background-image: url("../assets/img/background.png");*/
-    background-image: url("../assets/img/back2.jpg");
+
+/* ===== Global Styles ===== */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body {
+    margin: 0;
+    background-color: #fefae0;
+    background-image: url("../assets/img/background.png");
     background-size: cover;
+    transition: background-image 0.5s ease;
 }
 
+/* ===== Title and Navigation ===== */
 #title {
-    font-size: 7em;
-    color: #000000;
-    text-shadow: -1px -1px 0 #fff, 1px -1px 0 #fff, -1px 1px 0 #fff, 1px 1px 0 #fff;
-    text-align: center;
-    margin-top: 20px;
-}
-#menu-graffiti{
-    font-family: "graffiti-Basic";
-}
-#menu-graffiti:hover {
-    font-family: "graffiti-Selected";
-}
-#menu-pixel{
-    font-family: "pixel-Basic";
-}
-#menu-pixel:hover {
-    font-family: "pixel-Selected";
-}
-#menu-aero{
-    font-family: "aero-Basic";
-}
-#menu-aero:hover {
-    font-family: "aero-Selected";
-}
-#menu-grecia{
-    font-family: "grecia-Basic";
-}
-#menu-grecia:hover {
-    font-family: "grecia-Selected";
-}
-#menu-comic{
-    font-family: "comic-Basic";
-}
-#menu-comic:hover {
-    font-family: "comic-Selected";
-}
-
-#menu-eighty{
-    font-family: "eighty-Basic";
-}
-#menu-eighty:hover {
-    font-family: "eighty-Selected";
-}
-
-.menu{
-    list-style-type: none;
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    justify-content: center;
-}
-.menu > a > li {
-    text-align: center;
-    padding: 14px 16px;
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    border-radius: 20px;
-    width: 20%;
-    min-width: 200px;
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
-    transition: all 0.3s ease;
-}
-
-.menu > a > li:hover {
-    transition: all 0.3s ease;
-    transform: scale(1.5);
-}
-
-.menu-item{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    transition: all 0.3s ease;
-}
-
-.menu-item:hover{
-    color: #ffffff;
-    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, #000 10px 10px 10px;
-    transition: all 0.3s ease;
-}
-
-.menu-item > li {
-    position: relative;
-    z-index: 1;
-}
-.menu-item > li > img {
-    width: 400px;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%) scale(0);
-    z-index: -1;
-    opacity: 0;
-    transition: all 0.5s ease;
-}
-.menu-item:hover img {
-    transform: translate(-50%, -50%) scale(0.7);
-    opacity: 1;
-}
-
-.menu > a {
-    text-decoration: none;
-    color: #000000;
     font-size: 3em;
+    color: #fefae0;
+    text-align: center;
+    margin: 50px 0 0 0;
+    font-family: "amoera";
+}
+
+.title-container {
+    height: auto;
+    background-color: #606c38aa;
+    backdrop-filter: blur(30px);
+    border-radius: 0 0 50px 50px;
+    margin: 0px 50px 50px 50px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    z-index: 99;
+}
+
+#navbar {
+    text-decoration: none;
+    font-family: "symbols";
+    color: #dda15e;
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style-type: none;
+    padding: 10px;
+}
+
+#navbar a {
+    color: #dda15e;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#navbar > li {
+    padding: 10px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+#navbar > li:hover {
+    background-color: #283618;
+    border-radius: 20px;
+}
+
+/* ===== Menu Font Families ===== */
+#menu-graffiti { font-family: "graffiti"; }
+#menu-pixel { font-family: "pixel"; }
+#menu-aero { font-family: "aero"; }
+#menu-grecia { font-family: "grecia"; }
+#menu-comic { font-family: "comic"; }
+#menu-eighty { font-family: "eighty"; }
+#menu-retroFuture { font-family: "retroFuture"; }
+#menu-cyberpunk { font-family: "cyber"; }
+#menu-impresionism { font-family: "impressionism"; }
+#menu-ukiyoe { font-family: "ukiyoe"; }
+
+/* ===== Menu ===== */
+#menu-container {
+    background: #606c38aa;
+    backdrop-filter: blur(0);
+    border-radius: 50px;
+    margin: 50px;
+    padding-top: 50px;
+    padding-bottom: 50px;
+    transition: all 0.5s ease;
 }
 
 .menu {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 16px;
-    row-gap: 100px;
+    gap: 50px 50px;
+    justify-items: center;
+    align-items: center;
     list-style-type: none;
-    margin: 0;
+    margin: 0 5px 50px 5px;
     padding: 0;
-    justify-content: center;
 }
 
-@media (max-width: 600px) {
+.menu > li {
+    width: 60%;
+    min-width: 200px;
+    height: 100px;
+    padding: 14px 16px;
+    text-align: center;
+    align-content: center;
+    background: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    position: relative;
+    z-index: 1;
+    transition: all 0.3s ease;
+}
+
+.menu-item {
+    font-size: 2.5em;
+    color: #000000;
+    text-decoration: none;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s ease;
+}
+
+.menu-item img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 275%;
+    transform: translate(-50%, -50%) scale(0);
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s ease;
+}
+
+.menu > li:hover {
+    background-color: #00000000;
+    transform: scale(1.20);
+    transition: all 0.3s ease;
+}
+
+.menu > li:hover > .menu-item {
+    color: #ffffff;
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000, -2px 0 0 #000, 2px 0 0 #000, 0 -2px 0 #000, 0 2px 0 #000, #000 10px 10px 10px;
+    background-color: #00000000;
+    transition: all 0.3s ease;
+}
+
+.menu > li:hover > .menu-item img {
+    transform: translate(-50%, -50%) scale(0.6);
+    opacity: 1;
+    background-color: #00000000;
+}
+
+/* ===== Background Pictures ===== */
+body:has(.menu > li:hover) #menu-container {
+    background-color: #ffffff40;
+    backdrop-filter: blur(30px);
+    transition: all 0.5s ease;
+}
+
+body:has(#menu-graffiti-li:hover) {
+    background-image: url("../assets/img/graffiti/wallpaper.jpg");
+    opacity: 1;
+}
+body:has(#menu-pixel-li:hover) {
+    background-image: url("../assets/img/pixel/wallpaper.png");
+    opacity: 1;
+}
+body:has(#menu-aero-li:hover) {
+    background-image: url("../assets/img/aero/wallpaper.png");
+    opacity: 1;
+}
+body:has(#menu-grecia-li:hover){
+    background-image: url("../assets/img/grecia/wallpaper.jpg");
+    opacity: 1;
+}
+body:has(#menu-comic-li:hover) {
+    background-image: url("../assets/img/comic/wallpaper.jpg");
+    opacity: 1;
+}
+body:has(#menu-eighty-li:hover) {
+    background-image: url("../assets/img/eighty/wallpaper.jpg");
+    opacity: 1;
+}
+body:has(#menu-retroFuture-li:hover) {
+    background-image: url("../assets/img/retroFuture/wallpaper.jpg");
+    opacity: 1;
+}
+body:has(#menu-cyberpunk-li:hover) {
+    background-image: url("../assets/img/cyberpunk/wallpaper.jpg");
+    opacity: 1;
+}
+body:has(#menu-impresionism-li:hover) {
+    background-image: url("../assets/img/impresionism/wallpaper.jpg");
+    opacity: 1;
+}
+
+body:has(#menu-ukiyoe-li:hover) {
+    background-image: url("../assets/img/ukiyoe/wallpaper.jpg");
+    opacity: 1;
+}
+
+/* ===== Media Queries ===== */
+@media (max-width: 770px) {
     .menu {
         grid-template-columns: 1fr;
     }
-}
-
-.title-container {
-    height: 15em;
-}
-
-body:has(#menu-graffiti:hover) #title {
-    font-family: "graffiti-Basic";
-}
-body:has(#menu-pixel:hover) #title {
-    font-family: "pixel-Basic";
-}
-body:has(#menu-aero:hover) #title {
-    font-family: "aero-Basic";
-}
-body:has(#menu-grecia:hover) #title {
-    font-family: "grecia-Basic";
-}
-body:has(#menu-comic:hover) #title {
-    font-family: "comic-Basic";
-}
-body:has(#menu-eighty:hover) #title {
-    font-family: "eighty-Basic";
 }
