@@ -1,0 +1,64 @@
+:root {
+  --color-graffiti: #bd4a92;
+  --color-pixel: #5490e3;
+  --color-aero: #d5f74c;
+  --color-grecia: #937f66;
+  --color-comic: #feaa04;
+  --color-eighty: #fe94b5;
+  --color-retroFuture: #9ac9af;
+  --color-cyberpunk: #e5a7e9;
+  --color-impresionism: #d4a851;
+  --color-ukiyoe: #98be8d;
+
+  --font-graffiti: 'graffiti', sans-serif;
+  --font-pixel: 'pixel', sans-serif;
+  --font-aero: 'aero', sans-serif;
+  --font-grecia: 'grecia', serif;
+  --font-comic: 'comic', sans-serif;
+  --font-eighty: 'eighty', sans-serif;
+  --font-retroFuture: 'retroFuture', sans-serif;
+  --font-cyberpunk: 'cyber', sans-serif;
+  --font-impresionism: 'impressionism', serif;
+  --font-ukiyoe: 'ukiyoe', serif;
+}
+
+@font-face {
+  font-family: "graffiti";
+  src: url("../assets/fonts/graffiti/graffiti.otf");
+}
+@font-face {
+  font-family: "pixel";
+  src: url("../assets/fonts/pixel/pixel.ttf");
+}
+@font-face {
+  font-family: "aero";
+  src: url("../assets/fonts/aero/aero.otf");
+}
+@font-face {
+  font-family: "grecia";
+  src: url("../assets/fonts/grecia/grecia.ttf");
+}
+@font-face {
+  font-family: "comic";
+  src: url("../assets/fonts/comic/comic.otf");
+}
+@font-face {
+  font-family: "eighty";
+  src: url("../assets/fonts/eighty/eighty.otf");
+}
+@font-face {
+  font-family: "retroFuture";
+  src: url("../assets/fonts/retroFuture/retroFuture.ttf");
+}
+@font-face {
+  font-family: "cyber";
+  src: url("../assets/fonts/cyberpunk/cyber.ttf");
+}
+@font-face {
+  font-family: "impressionism";
+  src: url("../assets/fonts/impressionism/impressionism.ttf");
+}
+@font-face {
+  font-family: "ukiyoe";
+  src: url("../assets/fonts/ukiyoe/ukiyoe.ttf");
+}

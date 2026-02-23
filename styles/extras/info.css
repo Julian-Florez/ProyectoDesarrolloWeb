@@ -1,0 +1,128 @@
+@font-face {
+    font-family: "General-text";
+    src: url("../assets/fonts/shared/GoogleSans.ttf") format("truetype");
+}
+
+body{
+    background-color: #fefae0;
+}
+.section{
+    background: transparent;
+    margin: 0px 80px 0px 80px;
+    padding: 0px;
+    text-align: center;
+}
+.backbutton{
+    background-color: #606c38aa;
+}
+.backbutton:hover{
+    background-color: #414331;
+}
+
+.section-button h2{
+    font-size: 2em;
+}
+
+.popover{
+    width: 50%;
+    height: 50%;
+    background-color: #00000020;
+    backdrop-filter: blur(30px);
+    border: none;
+    border-radius: 50px;
+    font-size: 1.3em;
+    font-family: "General-text";
+}
+
+.popover:popover-open{
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    padding: 50px;
+}
+body:has(.popover:popover-open) .section-button{
+    pointer-events: none;
+}
+.popover::backdrop{
+    background-color: transparent;
+    backdrop-filter: blur(10px);
+    animation: backdropFadeInOut 0.5s ease;
+}
+
+
+@keyframes backdropFadeInOut{
+    from{
+        backdrop-filter: blur(0px);
+    }
+    to{
+        backdrop-filter: blur(10px);
+    }
+}
+
+.section-box{
+    display: flex;
+    margin: 50px;
+}
+
+.section-button{
+    background: #00000040;
+    backdrop-filter: blur(30px);
+    border-radius: 50px;
+    font-family: "General-text", sans-serif;
+    border: none;
+    background-color: #606c38aa;
+    width: 30%;
+    height: 20em;
+    margin-left: 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex: 0 1 40%;
+    transition: all 0.5s ease;
+    cursor: pointer;
+}
+
+@media (min-width: 901px) {
+    .section-button:hover{
+        flex: 0 0 40%;
+        padding-left: 5%;
+        padding-right: 5%;
+        transition: all 0.5s ease;
+    }
+    .section-button:first-child {
+        margin-left: 0px;
+        margin-right: auto;
+    }
+    .section-button:nth-child(2) {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .section-button:last-child {
+        margin-left: auto;
+        margin-right: 0px;
+    }
+}
+
+@media (max-width: 900px) {
+    .section-box{
+        flex-direction: column;
+        align-items: center;
+    }
+    .section-button{
+        width: 100%;
+        margin: 20px;
+        flex: 0 1 auto;
+    }
+    .section-button:hover{
+        width: 110%;
+        padding-left: 5%;
+        padding-right: 5%;
+        transition: all 0.5s ease;
+    }
+}
+
+
+

@@ -1,0 +1,141 @@
+@font-face {
+    font-family: "General-text";
+    src: url("../assets/fonts/shared/GoogleSans.ttf") format("truetype");
+}
+@font-face {
+    font-family: "symbols";
+    src: url("../assets/fonts/title/symbols.ttf");
+}
+
+@font-face {
+    font-family: "amoera";
+    src: url("../assets/fonts/title/amoera.ttf");
+}
+
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+body{
+    margin:0;
+}
+
+.backbutton {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #00000040;
+    backdrop-filter: blur(30px);
+    border-radius: 20%;
+    z-index: 1000;
+    font-size: 50px;
+    font-family: "symbols";
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.backbutton a {
+    color: #000000;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+.backbutton:hover{
+    background-color: #00000080;
+    border-radius: 40%;
+    transition: all 0.3s ease;
+}
+
+.backbutton:hover a {
+    font-weight: 700;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.section {
+    background: #00000040;
+    backdrop-filter: blur(30px);
+    border-radius: 50px;
+    margin: 50px;
+    padding: 50px;
+    font-family: "General-text", sans-serif;
+}
+
+.header {
+    height: auto;
+    background-color: #00000040;
+    backdrop-filter: blur(30px);
+    border-radius: 0 0 50px 50px;
+    margin: 0px 50px 50px 50px;
+    padding: 20px 50px 50px 50px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: "General-text", sans-serif;
+}
+
+#navbar {
+    text-decoration: none;
+    font-family: "symbols";
+    font-size: 2em;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    list-style-type: none;
+    padding: 10px;
+}
+
+#navbar a {
+    color: #fefae0;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+#navbar > li {
+    width: 1.5em;
+    height: 1.5em;
+    padding: 10px;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar > li:hover {
+    background-color: #00000090;
+    border-radius: 20px;
+}
+
+#navbar > li:hover a {
+    font-weight: 700;
+    font-size: 1.3em;
+    transition: all 0.3s ease;
+}
+
+#title {
+    font-size: 3em;
+    color: #fefae0;
+    text-shadow: -5px -5px 10px #000, 5px -5px 10px #000, -5px 5px 10px #000, 5px 5px 10px #000;
+    text-align: center;
+    margin: 50px 0 0 0;
+    font-family: "amoera";
+}
+
+.title-container {
+    height: auto;
+    background-color: #606c38aa;
+    backdrop-filter: blur(30px);
+    border-radius: 0 0 50px 50px;
+    margin: 0px 50px 50px 50px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    transition: background-color 0.5s ease;
+}
