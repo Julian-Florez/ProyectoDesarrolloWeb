@@ -107,7 +107,7 @@ body{
     justify-content: center;
 }
 
-#navbar > li:hover {
+#navbar > li:hover, #navbar li[data-actual-page="on"]{
     background-color: #00000090;
     border-radius: 20px;
 }
