@@ -1,14 +1,429 @@
-@import url("../variables.css");
-
-body {
-  background-color: var(--color-graffiti);
-  background-image: url("../../assets/img/graffiti/doodles.svg");
-  background-size: 200px;
-  background-repeat: repeat;
-  background-blend-mode: soft-light;
-  transition: all 0.5s ease;
+:root {
+  --page-background-color: var(--color-graffiti);
+  --page-background-image: url("../../assets/img/graffiti/doodles.svg");
+  --page-title-font: var(--font-graffiti);
 }
 
-.header h1 {
+.graffiti-cards {
+  margin-top: 30px;
+}
+
+.graffiti-card {
+  background: #00000050;
+  backdrop-filter: blur(30px);
+  border: 2px solid #00000030;
+  border-radius: 32px;
+  overflow: hidden;
+  box-shadow: 0 18px 40px #00000030;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+}
+
+.graffiti-card:hover {
+  transform: translateY(-6px) rotate(-0.5deg);
+  box-shadow: 0 24px 45px #00000050;
+  border-color: #ffffff30;
+}
+
+.graffiti-card-image {
+  height: 220px;
+  object-fit: cover;
+}
+
+.graffiti-card .card-body {
+  padding: 24px;
+}
+
+.graffiti-card .card-title {
+  margin: 0 0 20px;
+  color: #fff3fb;
   font-family: var(--font-graffiti);
+  font-size: 1.8rem;
+  line-height: 1.1;
+  text-shadow: 2px 2px 0 #00000070;
+}
+
+.graffiti-card-button {
+  background: #111111d0;
+  color: #fff3fb;
+  border: 2px solid #ffffff25;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.graffiti-card-button:hover,
+.graffiti-card-button:focus,
+.graffiti-card-button:active {
+  background: #fff3fb;
+  color: #3f102e;
+  border-color: #fff3fb;
+}
+
+.graffiti-modal .modal-content {
+  background: #160a14d9;
+  backdrop-filter: blur(32px);
+  border: 2px solid #ffffff1f;
+  border-radius: 34px;
+  color: #fff6fc;
+  box-shadow: 0 30px 60px #00000070;
+}
+
+.graffiti-modal .modal-header {
+  border-bottom: 1px solid #ffffff1a;
+  padding: 22px 24px 14px;
+}
+
+.graffiti-modal .modal-title {
+  font-family: var(--font-graffiti);
+  font-size: 2rem;
+  line-height: 1.1;
+  color: #fff3fb;
+  text-shadow: 2px 2px 0 #00000060;
+}
+
+.graffiti-modal .modal-body {
+  padding: 0 24px 24px;
+  font-family: "General-text", sans-serif;
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.graffiti-modal .btn-close {
+  filter: invert(1) grayscale(1) brightness(200%);
+}
+
+.modal-backdrop.show {
+  opacity: 0.7;
+}
+
+.graffiti-techniques-carousel {
+  margin-top: 30px;
+  padding: 10px 0 50px;
+}
+
+.graffiti-technique-panel {
+  background: #00000052;
+  backdrop-filter: blur(30px);
+  border: 2px solid #ffffff1f;
+  border-radius: 34px;
+  overflow: hidden;
+  box-shadow: 0 20px 50px #00000035;
+}
+
+.graffiti-technique-image {
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  object-fit: cover;
+  display: block;
+}
+
+.graffiti-technique-content {
+  height: 100%;
+  padding: 36px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.graffiti-technique-kicker {
+  color: #ffd7ee;
+  font-family: "General-text", sans-serif;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.graffiti-technique-content h3 {
+  margin: 0 0 18px;
+  color: #fff3fb;
+  font-family: var(--font-graffiti);
+  font-size: 2.2rem;
+  line-height: 1.05;
+  text-shadow: 2px 2px 0 #00000065;
+}
+
+.graffiti-technique-content p {
+  margin: 0;
+  color: #fff6fc;
+  font-size: 1.05rem;
+  line-height: 1.8;
+}
+
+.graffiti-carousel-indicators {
+  position: static;
+  margin: 0 0 18px;
+}
+
+.graffiti-carousel-indicators [data-bs-target] {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 0;
+  background-color: #ffffff55;
+  opacity: 1;
+}
+
+.graffiti-carousel-indicators .active {
+  background-color: #fff3fb;
+  box-shadow: 0 0 0 4px #00000025;
+}
+
+.graffiti-carousel-control {
+  width: 54px;
+  height: 54px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #111111c9;
+  border: 2px solid #ffffff22;
+  border-radius: 50%;
+  opacity: 1;
+}
+
+.graffiti-carousel-control.carousel-control-prev {
+  left: -10px;
+}
+
+.graffiti-carousel-control.carousel-control-next {
+  right: -10px;
+}
+
+.graffiti-carousel-control:hover,
+.graffiti-carousel-control:focus {
+  background: #fff3fb;
+}
+
+.graffiti-carousel-control:hover .carousel-control-prev-icon,
+.graffiti-carousel-control:hover .carousel-control-next-icon,
+.graffiti-carousel-control:focus .carousel-control-prev-icon,
+.graffiti-carousel-control:focus .carousel-control-next-icon {
+  filter: invert(1);
+}
+
+.graffiti-artists-gallery {
+  margin-top: 28px;
+}
+
+.graffiti-artist-card {
+  background: #00000052;
+  backdrop-filter: blur(30px);
+  border: 2px solid #ffffff1f;
+  border-radius: 32px;
+  box-shadow: 0 18px 40px #00000035;
+  overflow: hidden;
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+}
+
+.graffiti-artist-card:hover,
+.graffiti-artist-card[open] {
+  transform: translateY(-6px);
+  box-shadow: 0 26px 55px #00000055;
+  border-color: #ffffff38;
+}
+
+.graffiti-artist-trigger {
+  list-style: none;
+  cursor: pointer;
+  display: block;
+}
+
+.graffiti-artist-visual {
+  position: relative;
+  aspect-ratio: 1/1;
+  overflow: hidden;
+}
+
+.graffiti-artist-portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.45s ease, filter 0.45s ease;
+}
+
+.graffiti-artist-signature {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: min(70%, 220px);
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(0 12px 24px #00000088);
+  transition: transform 0.45s ease, top 0.45s ease, width 0.45s ease;
+}
+
+.graffiti-artist-copy {
+  max-height: 0;
+  overflow: hidden;
+  padding: 0 20px;
+  opacity: 0;
+  transition: max-height 0.45s ease, opacity 0.35s ease, padding 0.35s ease;
+}
+
+.graffiti-artist-copy h3 {
+  margin: 0 0 10px;
+  color: #fff3fb;
+  font-family: "General-text", sans-serif;
+  font-size: 1.5rem;
+  line-height: 1.05;
+  font-weight: 700;
+}
+
+.graffiti-artist-copy p {
+  margin: 0;
+  color: #fff6fc;
+}
+
+.graffiti-artist-card:hover .graffiti-artist-signature,
+.graffiti-artist-card[open] .graffiti-artist-signature {
+  top: calc(100% - 28px);
+  transform: translate(-50%, -100%);
+  width: min(56%, 180px);
+}
+
+.graffiti-artist-card:hover .graffiti-artist-portrait,
+.graffiti-artist-card[open] .graffiti-artist-portrait {
+  transform: scale(1.05);
+  filter: saturate(1.1);
+}
+
+.graffiti-artist-card:hover .graffiti-artist-copy,
+.graffiti-artist-card[open] .graffiti-artist-copy {
+  max-height: 260px;
+  padding: 16px 20px 22px;
+  opacity: 1;
+}
+
+.graffiti-inline-link {
+  color: inherit;
+  text-decoration: none;
+  display: inline-block;
+  transform-origin: center;
+  transition: color 0.2s ease, transform 0.2s ease, font-family 0.2s ease, text-shadow 0.2s ease;
+}
+
+.graffiti-inline-link:hover,
+.graffiti-inline-link:focus-visible {
+  color: #fff;
+  font-size: 1.1em;
+}
+
+@media (max-width: 768px) {
+  .graffiti-card .card-title {
+    font-size: 1.5rem;
+  }
+
+  .graffiti-card-image {
+    height: 190px;
+  }
+
+  .graffiti-card .card-body {
+    padding: 20px;
+  }
+
+  .graffiti-techniques-carousel {
+    padding: 4px 0 80px;
+  }
+
+  .graffiti-technique-image {
+    min-height: 240px;
+  }
+
+  .graffiti-technique-content {
+    padding: 26px;
+  }
+
+  .graffiti-technique-content h3 {
+    font-size: 1.8rem;
+  }
+
+  .graffiti-modal .modal-dialog {
+    margin: 14px;
+  }
+
+  .graffiti-modal .modal-header {
+    padding: 18px 18px 12px;
+  }
+
+  .graffiti-modal .modal-body {
+    padding: 0 18px 18px;
+  }
+
+  .graffiti-artist-card:hover .graffiti-artist-copy,
+  .graffiti-artist-card:focus-within .graffiti-artist-copy,
+  .graffiti-artist-card[open] .graffiti-artist-copy {
+    padding: 14px 16px 18px;
+  }
+
+  .graffiti-carousel-control {
+    top: auto;
+    bottom: 0;
+    transform: none;
+  }
+
+  .graffiti-carousel-control.carousel-control-prev {
+    left: calc(50% - 64px);
+  }
+
+  .graffiti-carousel-control.carousel-control-next {
+    right: calc(50% - 64px);
+  }
+}
+
+@media (max-width: 480px) {
+  .graffiti-artists-gallery .row {
+    --bs-columns: 1;
+  }
+
+  .graffiti-artists-gallery .col {
+    width: 100%;
+    flex: 0 0 100%;
+  }
+
+  .graffiti-card-image {
+    height: 170px;
+  }
+
+  .graffiti-technique-image {
+    min-height: 210px;
+  }
+
+  .graffiti-technique-content {
+    padding: 22px 16px;
+  }
+
+  .graffiti-technique-content h3 {
+    font-size: 1.55rem;
+  }
+
+  .graffiti-technique-content p {
+    font-size: 0.98rem;
+  }
+
+  .graffiti-artist-signature {
+    width: min(74%, 160px);
+  }
+
+  .graffiti-artist-copy {
+    padding: 0 14px;
+  }
+
+  .graffiti-artist-copy h3 {
+    font-size: 1.2rem;
+  }
+
+  .graffiti-artist-card:hover .graffiti-artist-copy,
+  .graffiti-artist-card:focus-within .graffiti-artist-copy,
+  .graffiti-artist-card[open] .graffiti-artist-copy {
+    padding: 12px 14px 16px;
+    max-height: 420px;
+  }
 }

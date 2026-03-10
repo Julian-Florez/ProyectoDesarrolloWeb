@@ -1,18 +1,6 @@
-@import url("./variables.css");
-
-@font-face {
-    font-family: "symbols";
-    src: url("../assets/fonts/title/symbols.ttf");
-}
-
 body {
-    margin: 0;
     background-color: #fefae0;
     background-image: url("../assets/img/background.svg");
-    background-size: 200px;
-    background-repeat: repeat;
-    background-blend-mode: soft-light;
-    transition: all 0.5s ease;
 }
 
 #menu-graffiti { font-family: "graffiti"; }
@@ -166,7 +154,25 @@ body:has(#menu-ukiyoe-li:hover) {
 }
 
 @media (max-width: 770px) {
+    #menu-container {
+        margin: 16px;
+    }
+
+    .menu {
+        margin: 0 0 24px 0;
+    }
+
     .menu {
         grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    #menu-container {
+        margin: 10px;
+    }
+
+    .menu {
+        margin: 0 0 18px 0;
     }
 }

@@ -1,14 +1,5 @@
-@import url("../variables.css");
-
-body {
-  background-color: var(--color-impresionism);
-  background-image: url("../../assets/img/impresionism/doodles.svg");
-  background-size: 200px;
-  background-repeat: repeat;
-  background-blend-mode: soft-light;
-  transition: all 0.5s ease;
-}
-
-.header h1 {
-  font-family: var(--font-impresionism);
+:root {
+  --page-background-color: var(--color-impresionism);
+  --page-background-image: url("../../assets/img/impresionism/doodles.svg");
+  --page-title-font: var(--font-impresionism);
 }

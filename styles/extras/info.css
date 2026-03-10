@@ -1,8 +1,3 @@
-@font-face {
-    font-family: "General-text";
-    src: url("../assets/fonts/shared/GoogleSans.ttf") format("truetype");
-}
-
 body{
     background-color: #fefae0;
 }
@@ -121,6 +116,34 @@ body:has(.popover:popover-open) .section-button{
         padding-left: 5%;
         padding-right: 5%;
         transition: all 0.5s ease;
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        margin: 0 16px;
+    }
+
+    .section-box {
+        margin: 24px 16px;
+    }
+
+    .section-button {
+        margin: 16px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        margin: 0 10px;
+    }
+
+    .section-box {
+        margin: 18px 10px;
+    }
+
+    .section-button {
+        margin: 12px 0;
     }
 }
 
