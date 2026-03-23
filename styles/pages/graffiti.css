@@ -5,7 +5,7 @@
 /* Fuente principal */
 @font-face {
     font-family: "graffiti-body";
-    src: url("/assets/fonts/graffiti/graffiti-body.ttf") format("truetype");
+    src: url("../../assets/fonts/graffiti/graffiti-body.ttf") format("truetype");
 }
 
 /* Base de pagina */
