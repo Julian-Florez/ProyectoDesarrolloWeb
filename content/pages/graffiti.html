@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,524 +10,99 @@
     <link rel="stylesheet" href="../../styles/shared.css">
     <link rel="stylesheet" href="../../styles/pages/graffiti.css">
 </head>
+
 <body>
-        <div class="backbutton">
-            <a href="../../index.html">&#xf434</a>
-        </div>
-    <header class="header">
-        <h1>Graffiti: Expresión del Arte Urbano</h1>
-        <p>
-            El graffiti es una forma de arte visual que surge en espacios públicos, 
-            convirtiéndose en una expresión fundamental de la cultura urbana contemporánea. 
-            A través de colores vibrantes, letras estilizadas y mensajes poderosos, 
-            el graffiti transforma las ciudades en lienzos gigantes donde los artistas 
-            plasman su visión del mundo.
-        </p>
+    <div class="backbutton">
+        <a href="../../index.html">&#xf434</a>
+    </div>
+
+    <header class="mb-4">
+        <img src="../../assets/img/graffiti/title.png" class="header-image">
     </header>
+    <nav class="navbar navbar-expand-lg navbar-dark graffiti-navbar mb-4">
+        <div class="container-fluid">
+            <ul class="navbar-nav mx-auto flex-row gap-3">
+                <li class="nav-item"><a class="nav-link" href="#que-es"><img
+                            src="../../assets/img/graffiti/menu-selectors/que-es.svg" alt="" class="menu-image"></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#origen-historia"><img
+                            src="../../assets/img/graffiti/menu-selectors/historia.svg" alt="" class="menu-image"></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#caracteristicas"><img
+                            src="../../assets/img/graffiti/menu-selectors/caracteristicas.svg" alt=""
+                            class="menu-image"></a></li>
+                <li class="nav-item"><a class="nav-link" href="#tecnicas-estilos"><img
+                            src="../../assets/img/graffiti/menu-selectors/tecnicas.svg" alt="" class="menu-image"></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#artistas"><img
+                            src="../../assets/img/graffiti/menu-selectors/artistas.svg" alt="" class="menu-image"></a>
+                </li>
+                <li class="nav-item"><a class="nav-link" href="#impacto"><img
+                            src="../../assets/img/graffiti/menu-selectors/impacto.svg" alt="" class="menu-image"></a>
+                </li>
+            </ul>
+            <img src="../../assets/img/graffiti/navbar-background.png" class="navbar-background">
+        </div>
+    </nav>
     <section class="section">
-        <h2>¿Qué es el Graffiti?</h2>
+        <h2 class="section-title" id="que-es" data-tint-color="#cf505d">¿Qué es el Graffiti?</h2>
         <p>
-            El graffiti es una manifestación artística visual que se caracteriza por 
-            la intervención de espacios públicos, principalmente muros y paredes urbanas. 
-            Esta forma de expresión utiliza diversos materiales y técnicas, siendo los 
-            aerosoles o sprays la herramienta más emblemática, aunque también se emplean 
-            plantillas (stencils), marcadores, rodillos y otras técnicas para crear 
-            desde simples firmas hasta complejos murales de gran escala.
-        </p>
-        <p>
-            El graffiti está íntimamente relacionado con el arte urbano y representa 
-            una forma de comunicación visual que emerge de las comunidades urbanas. 
-            A través de él, los artistas expresan ideas, emociones, críticas sociales 
-            y reivindicaciones políticas, convirtiendo el espacio público en un medio 
-            democrático de expresión artística accesible para todos.
+            Nace desde la ciudad y habla por ella. El graffiti expresa ideas, emociones
+            y críticas que cualquiera puede ver, sin filtros ni reglas. Es una forma libre
+            y directa de decir algo… justo donde todos pasan.
         </p>
     </section>
     <section class="section">
-        <h2>Origen e Historia</h2>
-        <p>
-            El graffiti moderno surge en la década de 1970 en la ciudad de Nueva York, 
-            específicamente en barrios como el Bronx y Brooklyn. Los jóvenes de estas 
-            comunidades comenzaron a marcar vagones de metro y muros con sus firmas o 
-            "tags", buscando ganar reconocimiento y visibilidad en un contexto urbano 
-            que a menudo los marginaba.
-        </p>
-        <p>
-            Con el tiempo, esta práctica se expandió desde Nueva York hacia otras ciudades 
-            importantes de Estados Unidos y posteriormente al resto del mundo, incluyendo 
-            Europa, América Latina, Asia y África. El graffiti se convirtió en un fenómeno 
-            global que trascendió fronteras culturales y geográficas.
-        </p>
-        <p>
-            El graffiti está profundamente vinculado con la cultura hip-hop, surgida 
-            paralelamente en las mismas comunidades neoyorquinas. Junto con el rap, 
-            el breakdance y el DJing, el graffiti constituye uno de los cuatro pilares 
-            fundamentales de esta cultura urbana, representando su expresión visual 
-            y artística.
-        </p>
+        <h2 class="section-title" id="origen-historia" data-tint-color="#1d8bca">Origen e Historia</h2>
+        <div id="historia-dynamic"></div>
     </section>
     <section class="section">
-        <h2>Características del Graffiti</h2>
-        <p>El graffiti se distingue por una serie de características que lo hacen único:</p>
-        <div class="container-fluid px-0 graffiti-cards">
-            <div class="row g-4">
-                <div class="col-12 col-md-6 col-xl-4">
-                    <article class="card h-100 graffiti-card">
-                        <img src="../../assets/img/graffiti/cards-caracteristicas/card-letras-estilizadas.jpg" class="card-img-top graffiti-card-image" alt="Imagen representativa del uso de letras estilizadas en el graffiti">
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title">Uso de letras estilizadas</h3>
-                            <button type="button" class="btn graffiti-card-button mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#modalLetrasEstilizadas" aria-label="Más información sobre uso de letras estilizadas" title="Más información">
-                                +
-                            </button>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md-6 col-xl-4">
-                    <article class="card h-100 graffiti-card">
-                        <img src="../../assets/img/graffiti/cards-caracteristicas/card-colores-vibrantes.jpg" class="card-img-top graffiti-card-image" alt="Imagen representativa de los colores vibrantes del graffiti">
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title">Colores vibrantes</h3>
-                            <button type="button" class="btn graffiti-card-button mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#modalColoresVibrantes" aria-label="Más información sobre colores vibrantes" title="Más información">
-                                +
-                            </button>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md-6 col-xl-4">
-                    <article class="card h-100 graffiti-card">
-                        <img src="../../assets/img/graffiti/cards-caracteristicas/card-espacios-urbanos.jpg" class="card-img-top graffiti-card-image" alt="Imagen representativa de la intervención de espacios urbanos con graffiti">
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title">Intervención de espacios urbanos</h3>
-                            <button type="button" class="btn graffiti-card-button mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#modalEspaciosUrbanos" aria-label="Más información sobre intervención de espacios urbanos" title="Más información">
-                                +
-                            </button>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md-6 col-xl-4">
-                    <article class="card h-100 graffiti-card">
-                        <img src="../../assets/img/graffiti/cards-caracteristicas/card-tag.jpg" class="card-img-top graffiti-card-image" alt="Imagen representativa de la identidad o firma del artista en el graffiti">
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title">Identidad o firma del artista (tag)</h3>
-                            <button type="button" class="btn graffiti-card-button mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#modalTag" aria-label="Más información sobre identidad o firma del artista" title="Más información">
-                                +
-                            </button>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md-6 col-xl-4">
-                    <article class="card h-100 graffiti-card">
-                        <img src="../../assets/img/graffiti/cards-caracteristicas/card-caracter-efimero.jpg" class="card-img-top graffiti-card-image" alt="Imagen representativa del carácter efímero y cambiante del graffiti">
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title">Carácter efímero y cambiante</h3>
-                            <button type="button" class="btn graffiti-card-button mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#modalCaracterEfimero" aria-label="Más información sobre el carácter efímero y cambiante del graffiti" title="Más información">
-                                +
-                            </button>
-                        </div>
-                    </article>
-                </div>
-                <div class="col-12 col-md-6 col-xl-4">
-                    <article class="card h-100 graffiti-card">
-                        <img src="../../assets/img/graffiti/cards-caracteristicas/card-expresion-social.jpg" class="card-img-top graffiti-card-image" alt="Imagen representativa de la expresión social o política en el graffiti">
-                        <div class="card-body d-flex flex-column">
-                            <h3 class="card-title">Expresión social o política</h3>
-                            <button type="button" class="btn graffiti-card-button mt-auto align-self-start" data-bs-toggle="modal" data-bs-target="#modalExpresionSocial" aria-label="Más información sobre expresión social o política" title="Más información">
-                                +
-                            </button>
-                        </div>
-                    </article>
-                </div>
-            </div>
-        </div>
+        <h2 class="section-title" id="caracteristicas" data-tint-color="#d97910">Características del Graffiti</h2>
+        <div id="caracteristicas-dynamic"></div>
     </section>
     <section class="section">
-        <h2>Técnicas y Estilos</h2>
-        <p>
-            A lo largo de su evolución, el graffiti ha desarrollado diversas técnicas 
-            y estilos, cada uno con sus propias características y niveles de complejidad:
-        </p>
-        <div id="graffitiTechniquesCarousel" class="carousel slide graffiti-techniques-carousel" data-bs-ride="false">
-            <div class="carousel-indicators graffiti-carousel-indicators">
-                <button type="button" data-bs-target="#graffitiTechniquesCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Ver técnica Tag"></button>
-                <button type="button" data-bs-target="#graffitiTechniquesCarousel" data-bs-slide-to="1" aria-label="Ver técnica Throw-up"></button>
-                <button type="button" data-bs-target="#graffitiTechniquesCarousel" data-bs-slide-to="2" aria-label="Ver técnica Piece"></button>
-                <button type="button" data-bs-target="#graffitiTechniquesCarousel" data-bs-slide-to="3" aria-label="Ver técnica Stencil"></button>
-                <button type="button" data-bs-target="#graffitiTechniquesCarousel" data-bs-slide-to="4" aria-label="Ver técnica Murales de gran escala"></button>
-            </div>
-
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <article class="graffiti-technique-panel">
-                        <div class="row g-0 align-items-stretch">
-                            <div class="col-12 col-lg-5">
-                                <img src="../../assets/img/graffiti/galeria-tecnicas/tag.jpg" class="graffiti-technique-image" alt="Imagen representativa de la técnica Tag en el graffiti">
-                            </div>
-                            <div class="col-12 col-lg-7">
-                                <div class="graffiti-technique-content">
-                                    <span class="graffiti-technique-kicker">Técnica 1</span>
-                                    <h3>Tag</h3>
-                                    <p>
-                                        Es la firma básica del artista, generalmente realizada con un solo color en un trazo rápido y continuo. Es la forma más simple y fundamental del graffiti, utilizada para marcar territorio o presencia.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="carousel-item">
-                    <article class="graffiti-technique-panel">
-                        <div class="row g-0 align-items-stretch">
-                            <div class="col-12 col-lg-5">
-                                <img src="../../assets/img/graffiti/galeria-tecnicas/throw-up.jpg" class="graffiti-technique-image" alt="Imagen representativa de la técnica Throw-up en el graffiti">
-                            </div>
-                            <div class="col-12 col-lg-7">
-                                <div class="graffiti-technique-content">
-                                    <span class="graffiti-technique-kicker">Técnica 2</span>
-                                    <h3>Throw-up</h3>
-                                    <p>
-                                        Una versión más elaborada que el tag, consiste en letras grandes rellenas con uno o dos colores, generalmente con contorno. Se ejecuta rápidamente, permitiendo cubrir más espacio en menos tiempo.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="carousel-item">
-                    <article class="graffiti-technique-panel">
-                        <div class="row g-0 align-items-stretch">
-                            <div class="col-12 col-lg-5">
-                                <img src="../../assets/img/graffiti/galeria-tecnicas/piece.jpg" class="graffiti-technique-image" alt="Imagen representativa de la técnica Piece o Masterpiece en el graffiti">
-                            </div>
-                            <div class="col-12 col-lg-7">
-                                <div class="graffiti-technique-content">
-                                    <span class="graffiti-technique-kicker">Técnica 3</span>
-                                    <h3>Piece (Masterpiece)</h3>
-                                    <p>
-                                        Es la forma más elaborada y compleja del graffiti. Incluye letras altamente estilizadas, múltiples colores, efectos de profundidad, brillos, sombras y detalles intrincados. Su realización puede tomar varias horas o incluso días.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="carousel-item">
-                    <article class="graffiti-technique-panel">
-                        <div class="row g-0 align-items-stretch">
-                            <div class="col-12 col-lg-5">
-                                <img src="../../assets/img/graffiti/galeria-tecnicas/stencil.jpg" class="graffiti-technique-image" alt="Imagen representativa de la técnica Stencil en el graffiti">
-                            </div>
-                            <div class="col-12 col-lg-7">
-                                <div class="graffiti-technique-content">
-                                    <span class="graffiti-technique-kicker">Técnica 4</span>
-                                    <h3>Stencil (Plantilla)</h3>
-                                    <p>
-                                        Técnica que utiliza plantillas recortadas para reproducir imágenes o textos de forma rápida y precisa. Popularizada por artistas como Banksy, permite repetir diseños y realizar trabajos detallados en poco tiempo.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-                <div class="carousel-item">
-                    <article class="graffiti-technique-panel">
-                        <div class="row g-0 align-items-stretch">
-                            <div class="col-12 col-lg-5">
-                                <img src="../../assets/img/graffiti/galeria-tecnicas/murales-gran-escala.jpg" class="graffiti-technique-image" alt="Imagen representativa de murales de gran escala en el graffiti">
-                            </div>
-                            <div class="col-12 col-lg-7">
-                                <div class="graffiti-technique-content">
-                                    <span class="graffiti-technique-kicker">Técnica 5</span>
-                                    <h3>Murales de gran escala</h3>
-                                    <p>
-                                        Obras monumentales que cubren fachadas enteras de edificios, requieren planificación, permisos y equipos especiales. Suelen incluir elementos realistas, abstractos o surrealistas y tienen un fuerte impacto visual en el paisaje urbano.
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-                    </article>
-                </div>
-            </div>
-
-            <button class="carousel-control-prev graffiti-carousel-control" type="button" data-bs-target="#graffitiTechniquesCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Anterior</span>
-            </button>
-            <button class="carousel-control-next graffiti-carousel-control" type="button" data-bs-target="#graffitiTechniquesCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                <span class="visually-hidden">Siguiente</span>
-            </button>
-        </div>
+        <h2 class="section-title" id="tecnicas-estilos" data-tint-color="#31812d">Técnicas y Estilos</h2>
+        <div id="tecnicas-dynamic"></div>
     </section>
     <section class="section">
-        <h2>Artistas Representativos</h2>
-        <p>
-            A lo largo de la historia del graffiti, numerosos artistas han dejado 
-            su huella, contribuyendo a la evolución y legitimación de esta forma 
-            de arte:
-        </p>
-        <div class="container-fluid px-0 graffiti-artists-gallery">
-            <div class="row g-4 row-cols-2 row-cols-lg-3">
-                <div class="col">
-                    <details class="graffiti-artist-card">
-                        <summary class="graffiti-artist-trigger" aria-label="Ver información sobre TAKI 183">
-                            <div class="graffiti-artist-visual">
-                                <img src="../../assets/img/graffiti/galeria-artistas/retratos/taki-183.jpg" class="graffiti-artist-portrait" alt="Retrato referencial de TAKI 183">
-                                <img src="../../assets/img/graffiti/galeria-artistas/firmas/taki-183.png" class="graffiti-artist-signature" alt="Firma de TAKI 183">
-                            </div>
-                        </summary>
-                        <div class="graffiti-artist-copy">
-                            <h3>TAKI 183</h3>
-                            <p>
-                                Considerado uno de los pioneros del graffiti moderno en Nueva York durante principios de los años 70. Su firma apareció por toda la ciudad, inspirando a miles de jóvenes a seguir su ejemplo.
-                            </p>
-                        </div>
-                    </details>
-                </div>
-                <div class="col">
-                    <details class="graffiti-artist-card">
-                        <summary class="graffiti-artist-trigger" aria-label="Ver información sobre Jean-Michel Basquiat">
-                            <div class="graffiti-artist-visual">
-                                <img src="../../assets/img/graffiti/galeria-artistas/retratos/jean-michel-basquiat.jpg" class="graffiti-artist-portrait" alt="Retrato referencial de Jean-Michel Basquiat">
-                                <img src="../../assets/img/graffiti/galeria-artistas/firmas/jean-michel-basquiat.png" class="graffiti-artist-signature" alt="Firma de Jean-Michel Basquiat">
-                            </div>
-                        </summary>
-                        <div class="graffiti-artist-copy">
-                            <h3>Jean-Michel Basquiat</h3>
-                            <p>
-                                Comenzó como escritor de graffiti bajo el seudónimo "SAMO" en las calles de Nueva York. Posteriormente se convirtió en uno de los artistas contemporáneos más influyentes, llevando la estética del graffiti a galerías y museos.
-                            </p>
-                        </div>
-                    </details>
-                </div>
-                <div class="col">
-                    <details class="graffiti-artist-card">
-                        <summary class="graffiti-artist-trigger" aria-label="Ver información sobre Keith Haring">
-                            <div class="graffiti-artist-visual">
-                                <img src="../../assets/img/graffiti/galeria-artistas/retratos/keith-haring.jpg" class="graffiti-artist-portrait" alt="Retrato referencial de Keith Haring">
-                                <img src="../../assets/img/graffiti/galeria-artistas/firmas/keith-haring.png" class="graffiti-artist-signature" alt="Firma de Keith Haring">
-                            </div>
-                        </summary>
-                        <div class="graffiti-artist-copy">
-                            <h3>Keith Haring</h3>
-                            <p>
-                                Artista estadounidense que combinó el arte pop con el graffiti, creando figuras icónicas simples y coloridas. Sus dibujos en el metro de Nueva York lo catapultaron a la fama internacional.
-                            </p>
-                        </div>
-                    </details>
-                </div>
-                <div class="col">
-                    <details class="graffiti-artist-card">
-                        <summary class="graffiti-artist-trigger" aria-label="Ver información sobre Banksy">
-                            <div class="graffiti-artist-visual">
-                                <img src="../../assets/img/graffiti/galeria-artistas/retratos/banksy.jpg" class="graffiti-artist-portrait" alt="Retrato referencial de Banksy">
-                                <img src="../../assets/img/graffiti/galeria-artistas/firmas/banksy.png" class="graffiti-artist-signature" alt="Firma de Banksy">
-                            </div>
-                        </summary>
-                        <div class="graffiti-artist-copy">
-                            <h3>Banksy</h3>
-                            <p>
-                                Artista callejero británico anónimo, maestro del stencil, conocido por sus obras satíricas y de crítica social y política. Sus intervenciones han aparecido en ciudades de todo el mundo y han alcanzado valores millonarios en subastas.
-                            </p>
-                        </div>
-                    </details>
-                </div>
-                <div class="col">
-                    <details class="graffiti-artist-card">
-                        <summary class="graffiti-artist-trigger" aria-label="Ver información sobre Lady Pink">
-                            <div class="graffiti-artist-visual">
-                                <img src="../../assets/img/graffiti/galeria-artistas/retratos/lady-pink.jpg" class="graffiti-artist-portrait" alt="Retrato referencial de Lady Pink">
-                                <img src="../../assets/img/graffiti/galeria-artistas/firmas/lady-pink.png" class="graffiti-artist-signature" alt="Firma de Lady Pink">
-                            </div>
-                        </summary>
-                        <div class="graffiti-artist-copy">
-                            <h3>Lady Pink</h3>
-                            <p>
-                                Una de las pocas mujeres pioneras del graffiti en Nueva York durante los años 80. Su trabajo ha sido fundamental para visibilizar la presencia femenina en un movimiento predominantemente masculino.
-                            </p>
-                        </div>
-                    </details>
-                </div>
-                <div class="col">
-                    <details class="graffiti-artist-card">
-                        <summary class="graffiti-artist-trigger" aria-label="Ver información sobre Os Gêmeos">
-                            <div class="graffiti-artist-visual">
-                                <img src="../../assets/img/graffiti/galeria-artistas/retratos/os-gemeos.jpg" class="graffiti-artist-portrait" alt="Retrato referencial de Os Gêmeos">
-                                <img src="../../assets/img/graffiti/galeria-artistas/firmas/os-gemeos.png" class="graffiti-artist-signature" alt="Firma de Os Gêmeos">
-                            </div>
-                        </summary>
-                        <div class="graffiti-artist-copy">
-                            <h3>Os Gêmeos</h3>
-                            <p>
-                                Dúo de hermanos brasileños de São Paulo, conocidos por sus murales coloridos de gran escala que incorporan elementos de la cultura brasileña, el surrealismo y la fantasía.
-                            </p>
-                        </div>
-                    </details>
-                </div>
-            </div>
-        </div>
+        <h2 class="section-title" id="artistas" data-tint-color="#bf8511">Artistas Representativos</h2>
+        <div id="artistas-dynamic"></div>
     </section>
     <section class="section">
-        <h2>Impacto Cultural</h2>
-        <p>
-            El graffiti ha tenido un impacto profundo y multifacético en la cultura 
-            contemporánea, trascendiendo su origen como práctica de la calle:
-        </p>
-        <p>
-            En la <strong><a class="graffiti-inline-link" href="https://www.journals.scholarpublishing.org/index.php/ASSRJ/article/view/19554" target="_blank">cultura urbana</a></strong>, el graffiti ha contribuido a definir 
-            la identidad visual de las ciudades modernas. Ha transformado espacios grises 
-            y deteriorados en galerías al aire libre, democratizando el acceso al arte 
-            y generando debates sobre la apropiación del espacio público. Ciudades como 
-            Berlín, Melbourne, São Paulo y Bogotá han abrazado el arte urbano como parte 
-            integral de su identidad cultural.
-        </p>
-        <p>
-            En cuanto a los <strong><a class="graffiti-inline-link" href="https://ejournal1.unud.ac.id/index.php/ecs/article/view/2394" target="_blank">movimientos sociales</a></strong>, el graffiti ha servido 
-            como herramienta de protesta, resistencia y denuncia. Desde las revueltas 
-            estudiantiles de Mayo del 68 en París hasta las protestas de la Primavera Árabe, 
-            Black Lives Matter y movimientos feministas, el graffiti ha dado voz a los 
-            marginados y ha desafiado las estructuras de poder establecidas.
-        </p>
-        <p>
-            El impacto en el <strong><a class="graffiti-inline-link" href="https://journals.wisethorough.com/index.php/sauc/article/view/82" target="_blank">diseño gráfico</a></strong> es innegable. La estética 
-            del graffiti ha influido profundamente en el diseño de logotipos, publicidad, 
-            tipografía, moda y diseño de producto. Marcas reconocidas han colaborado con 
-            artistas de graffiti, y el estilo urbano se ha convertido en una referencia 
-            constante en la cultura visual contemporánea.
-        </p>
-        <p>
-            Finalmente, en el <strong><a class="graffiti-inline-link" href="https://www.mdpi.com/2076-0787/14/5/110" target="_blank">arte contemporáneo</a></strong>, el graffiti ha logrado 
-            ingresar a galerías, museos y colecciones privadas. Instituciones prestigiosas 
-            como el MoMA, la Tate Modern y el Museo de Arte Contemporáneo de Los Ángeles 
-            han exhibido obras de artistas urbanos, validando el graffiti como una forma 
-            legítima de expresión artística y reconociendo su valor histórico y cultural.
-        </p>
+        <h2 class="section-title" id="impacto" data-tint-color="#9c45ce">Impacto Cultural</h2>
+        <div id="impacto-dynamic"></div>
     </section>
-    <section class="section">
-        <h2>Graffiti: ¿Arte o Vandalismo?</h2>
-        <p>
-            El graffiti existe en una delgada línea entre el arte y el vandalismo, 
-            generando un debate constante en la sociedad. Quienes lo consideran 
-            <strong>expresión artística</strong> argumentan que el graffiti democratiza 
-            el arte, llevándolo a las calles donde todos pueden acceder a él sin 
-            necesidad de pagar entrada a un museo o galería. Defienden que representa 
-            la libertad de expresión, la creatividad y la identidad cultural de 
-            comunidades marginadas, además de embellecer espacios deteriorados y 
-            generar conversaciones importantes sobre temas sociales y políticos.
-        </p>
-        <p>
-            Por otro lado, quienes lo perciben como <strong>vandalismo</strong> señalan 
-            que muchas intervenciones se realizan sin permiso de los propietarios, 
-            constituyendo una violación de la propiedad privada. Argumentan que genera 
-            costos de limpieza y reparación, contribuye a la percepción de inseguridad 
-            en ciertos barrios, y que no todo graffiti tiene valor artístico, existiendo 
-            también rayas, tags ilegibles o mensajes ofensivos que deterioran el espacio 
-            urbano.
-        </p>
-        <p>
-            Esta tensión ha llevado a muchas ciudades a buscar soluciones intermedias, 
-            como la creación de muros legales donde los artistas pueden pintar libremente, 
-            programas de arte público que comisionan murales, y la diferenciación legal 
-            entre graffiti autorizado y no autorizado. El debate continúa, pero es 
-            innegable que el graffiti ha transformado permanentemente la manera en que 
-            entendemos el arte, el espacio público y la expresión cultural urbana.
-        </p>
+    <section class="section" id="reflexion">
+        <div class="arte-vandalismo-grid">
+            <div class="arte-vandalismo-col arte-vandalismo-arte">
+                <img src="../../assets/img/graffiti/reflexion/arte.png" alt="Arte" class="arte-vandalismo-title">
+                <ul>
+                    <li>Creatividad</li>
+                    <li>Expresión</li>
+                    <li>Identidad cultural</li>
+                    <li>Transformación urbana</li>
+                    <li>Mensaje social</li>
+                </ul>
+            </div>
+            <div class="arte-vandalismo-col arte-vandalismo-vandalismo">
+                <img src="../../assets/img/graffiti/reflexion/vandalismo.png" alt="Vandalismo"
+                    class="arte-vandalismo-title">
+                <ul>
+                    <li>Daño</li>
+                    <li>Ilegal</li>
+                    <li>Desobediencia</li>
+                    <li>Controversia</li>
+                    <li>Degradación visual</li>
+                </ul>
+            </div>
+        </div>
     </section>
 
-    <div class="modal fade graffiti-modal" id="modalLetrasEstilizadas" tabindex="-1" aria-labelledby="modalLetrasEstilizadasLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title fs-4" id="modalLetrasEstilizadasLabel">Uso de letras estilizadas</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        Las letras se diseñan de forma creativa, deformándolas, entrecruzándolas y ornamentándolas para crear composiciones visuales únicas y difíciles de leer para quienes no están familiarizados con el estilo.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
+    <div id="graffiti-modals-dynamic"></div>
 
-    <div class="modal fade graffiti-modal" id="modalColoresVibrantes" tabindex="-1" aria-labelledby="modalColoresVibrantesLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title fs-4" id="modalColoresVibrantesLabel">Colores vibrantes</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        El uso de aerosoles permite aplicar colores intensos y combinaciones cromáticas llamativas que destacan en el entorno urbano, captando la atención del transeúnte.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade graffiti-modal" id="modalEspaciosUrbanos" tabindex="-1" aria-labelledby="modalEspaciosUrbanosLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title fs-4" id="modalEspaciosUrbanosLabel">Intervención de espacios urbanos</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        El graffiti transforma espacios olvidados, deteriorados o monótonos de la ciudad, agregando belleza, color y significado a lugares que de otro modo pasarían desapercibidos.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade graffiti-modal" id="modalTag" tabindex="-1" aria-labelledby="modalTagLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title fs-4" id="modalTagLabel">Identidad o firma del artista (tag)</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        Cada artista desarrolla una firma personal única que funciona como su identidad visual. El tag es la forma más básica de graffiti y representa el nombre o seudónimo del escritor.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade graffiti-modal" id="modalCaracterEfimero" tabindex="-1" aria-labelledby="modalCaracterEfimeroLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title fs-4" id="modalCaracterEfimeroLabel">Carácter efímero y cambiante</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        El graffiti suele ser temporal: puede borrarse, cubrirse con nuevas intervenciones o transformarse con el paso del tiempo. Esa naturaleza cambiante hace que muchas obras dialoguen con la ciudad de forma viva, reflejando el movimiento constante del entorno urbano.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="modal fade graffiti-modal" id="modalExpresionSocial" tabindex="-1" aria-labelledby="modalExpresionSocialLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h2 class="modal-title fs-4" id="modalExpresionSocialLabel">Expresión social o política</h2>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-                </div>
-                <div class="modal-body">
-                    <p>
-                        Muchos grafitis transmiten mensajes de protesta, denuncia social, reflexión política o comentarios sobre temas de actualidad, convirtiéndose en una voz de las comunidades y los movimientos sociales.
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-
+    <script src="../../js/effects/tint.js"></script>
     <script src="../../js/bootstrap.bundle.min.js"></script>
+    <script src="../../js/pages/graffiti.js"></script>
 </body>
+
 </html>

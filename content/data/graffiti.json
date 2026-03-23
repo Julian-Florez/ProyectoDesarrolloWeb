@@ -1,0 +1,227 @@
+{
+    "historia": [
+        {
+            "modalId": "modalHistoria1",
+            "modalLabelId": "modalHistoria1Label",
+            "imageSrc": "../../assets/img/graffiti/historia/origen.png",
+            "imageAlt": "",
+            "modalTitle": "Origen e Historia",
+            "modalBody": "El graffiti moderno nace en los años 70 en Nueva York, especialmente en barrios como el Bronx y Brooklyn. Todo empezó con jóvenes dejando sus firmas o \"tags\" en muros y vagones de metro, buscando hacerse notar en una ciudad que muchas veces no los veía."
+        },
+        {
+            "modalId": "modalHistoria2",
+            "modalLabelId": "modalHistoria2Label",
+            "imageSrc": "../../assets/img/graffiti/historia/expansion.png",
+            "imageAlt": "",
+            "modalTitle": "Expansión Global",
+            "modalBody": "Lo que comenzó en unas cuantas calles no tardó en viajar por el mundo. El graffiti se expandió por Estados Unidos y luego llegó a Europa, América Latina, Asia y África. Pasó de ser algo local a convertirse en un lenguaje global que conecta ciudades y culturas."
+        },
+        {
+            "modalId": "modalHistoria3",
+            "modalLabelId": "modalHistoria3Label",
+            "imageSrc": "../../assets/img/graffiti/historia/cultura.png",
+            "imageAlt": "",
+            "modalTitle": "Cultura Hip-Hop",
+            "modalBody": "El graffiti no está solo: forma parte de la cultura hip-hop. Junto con el rap, el breakdance y el DJing, es uno de sus pilares. Si la música es la voz, el graffiti es la imagen: lo que se pinta para que todos lo vean."
+        }
+    ],
+    "caracteristicas": [
+        {
+            "modalId": "modalLetrasEstilizadas",
+            "modalLabelId": "modalLetrasEstilizadasLabel",
+            "title": "Uso de letras estilizadas",
+            "imageSrc": "../../assets/img/graffiti/cards-caracteristicas/card-letras-estilizadas.jpg",
+            "imageAlt": "Imagen representativa del uso de letras estilizadas en el graffiti",
+            "buttonAriaLabel": "Más información sobre uso de letras estilizadas",
+            "modalBody": "Las letras se diseñan de forma creativa, deformándolas, entrecruzándolas y ornamentándolas para crear composiciones visuales únicas y difíciles de leer para quienes no están familiarizados con el estilo."
+        },
+        {
+            "modalId": "modalColoresVibrantes",
+            "modalLabelId": "modalColoresVibrantesLabel",
+            "title": "Colores vibrantes",
+            "imageSrc": "../../assets/img/graffiti/cards-caracteristicas/card-colores-vibrantes.jpg",
+            "imageAlt": "Imagen representativa de los colores vibrantes del graffiti",
+            "buttonAriaLabel": "Más información sobre colores vibrantes",
+            "modalBody": "El uso de aerosoles permite aplicar colores intensos y combinaciones cromáticas llamativas que destacan en el entorno urbano, captando la atención del transeúnte."
+        },
+        {
+            "modalId": "modalEspaciosUrbanos",
+            "modalLabelId": "modalEspaciosUrbanosLabel",
+            "title": "Intervención de espacios urbanos",
+            "imageSrc": "../../assets/img/graffiti/cards-caracteristicas/card-espacios-urbanos.jpg",
+            "imageAlt": "Imagen representativa de la intervención de espacios urbanos con graffiti",
+            "buttonAriaLabel": "Más información sobre intervención de espacios urbanos",
+            "modalBody": "El graffiti transforma espacios olvidados, deteriorados o monótonos de la ciudad, agregando belleza, color y significado a lugares que de otro modo pasarían desapercibidos."
+        },
+        {
+            "modalId": "modalTag",
+            "modalLabelId": "modalTagLabel",
+            "title": "Identidad o firma del artista (tag)",
+            "imageSrc": "../../assets/img/graffiti/cards-caracteristicas/card-tag.jpg",
+            "imageAlt": "Imagen representativa de la identidad o firma del artista en el graffiti",
+            "buttonAriaLabel": "Más información sobre identidad o firma del artista",
+            "modalBody": "Cada artista desarrolla una firma personal única que funciona como su identidad visual. El tag es la forma más básica de graffiti y representa el nombre o seudónimo del escritor."
+        },
+        {
+            "modalId": "modalCaracterEfimero",
+            "modalLabelId": "modalCaracterEfimeroLabel",
+            "title": "Carácter efímero y cambiante",
+            "imageSrc": "../../assets/img/graffiti/cards-caracteristicas/card-caracter-efimero.jpg",
+            "imageAlt": "Imagen representativa del carácter efímero y cambiante del graffiti",
+            "buttonAriaLabel": "Más información sobre el carácter efímero y cambiante del graffiti",
+            "modalBody": "El graffiti suele ser temporal: puede borrarse, cubrirse con nuevas intervenciones o transformarse con el paso del tiempo. Esa naturaleza cambiante hace que muchas obras dialoguen con la ciudad de forma viva, reflejando el movimiento constante del entorno urbano."
+        },
+        {
+            "modalId": "modalExpresionSocial",
+            "modalLabelId": "modalExpresionSocialLabel",
+            "title": "Expresión social o política",
+            "imageSrc": "../../assets/img/graffiti/cards-caracteristicas/card-expresion-social.jpg",
+            "imageAlt": "Imagen representativa de la expresión social o política en el graffiti",
+            "buttonAriaLabel": "Más información sobre expresión social o política",
+            "modalBody": "Muchos grafitis transmiten mensajes de protesta, denuncia social, reflexión política o comentarios sobre temas de actualidad, convirtiéndose en una voz de las comunidades y los movimientos sociales."
+        }
+    ],
+    "tecnicas": [
+        {
+            "kicker": "Técnica 1",
+            "title": "Tag",
+            "imageSrc": "../../assets/img/graffiti/galeria-tecnicas/tag.jpg",
+            "imageAlt": "Imagen representativa de la técnica Tag en el graffiti",
+            "description": "Es la firma básica del artista, generalmente realizada con un solo color en un trazo rápido y continuo. Es la forma más simple y fundamental del graffiti, utilizada para marcar territorio o presencia."
+        },
+        {
+            "kicker": "Técnica 2",
+            "title": "Throw-up",
+            "imageSrc": "../../assets/img/graffiti/galeria-tecnicas/throw-up.jpg",
+            "imageAlt": "Imagen representativa de la técnica Throw-up en el graffiti",
+            "description": "Una versión más elaborada que el tag, consiste en letras grandes rellenas con uno o dos colores, generalmente con contorno. Se ejecuta rápidamente, permitiendo cubrir más espacio en menos tiempo."
+        },
+        {
+            "kicker": "Técnica 3",
+            "title": "Piece (Masterpiece)",
+            "imageSrc": "../../assets/img/graffiti/galeria-tecnicas/piece.jpg",
+            "imageAlt": "Imagen representativa de la técnica Piece o Masterpiece en el graffiti",
+            "description": "Es la forma más elaborada y compleja del graffiti. Incluye letras altamente estilizadas, múltiples colores, efectos de profundidad, brillos, sombras y detalles intrincados. Su realización puede tomar varias horas o incluso días."
+        },
+        {
+            "kicker": "Técnica 4",
+            "title": "Stencil (Plantilla)",
+            "imageSrc": "../../assets/img/graffiti/galeria-tecnicas/stencil.jpg",
+            "imageAlt": "Imagen representativa de la técnica Stencil en el graffiti",
+            "description": "Técnica que utiliza plantillas recortadas para reproducir imágenes o textos de forma rápida y precisa. Popularizada por artistas como Banksy, permite repetir diseños y realizar trabajos detallados en poco tiempo."
+        },
+        {
+            "kicker": "Técnica 5",
+            "title": "Murales de gran escala",
+            "imageSrc": "../../assets/img/graffiti/galeria-tecnicas/murales-gran-escala.jpg",
+            "imageAlt": "Imagen representativa de murales de gran escala en el graffiti",
+            "description": "Obras monumentales que cubren fachadas enteras de edificios, requieren planificación, permisos y equipos especiales. Suelen incluir elementos realistas, abstractos o surrealistas y tienen un fuerte impacto visual en el paisaje urbano."
+        }
+    ],
+    "artistas": [
+        {
+            "name": "TAKI 183",
+            "ariaLabel": "Ver información sobre TAKI 183",
+            "portraitSrc": "../../assets/img/graffiti/galeria-artistas/retratos/taki-183.jpg",
+            "portraitAlt": "Retrato referencial de TAKI 183",
+            "signatureSrc": "../../assets/img/graffiti/galeria-artistas/firmas/taki-183.png",
+            "signatureAlt": "Firma de TAKI 183",
+            "description": "Considerado uno de los pioneros del graffiti moderno en Nueva York durante principios de los años 70. Su firma apareció por toda la ciudad, inspirando a miles de jóvenes a seguir su ejemplo."
+        },
+        {
+            "name": "Jean-Michel Basquiat",
+            "ariaLabel": "Ver información sobre Jean-Michel Basquiat",
+            "portraitSrc": "../../assets/img/graffiti/galeria-artistas/retratos/jean-michel-basquiat.jpg",
+            "portraitAlt": "Retrato referencial de Jean-Michel Basquiat",
+            "signatureSrc": "../../assets/img/graffiti/galeria-artistas/firmas/jean-michel-basquiat.png",
+            "signatureAlt": "Firma de Jean-Michel Basquiat",
+            "description": "Comenzó como escritor de graffiti bajo el seudónimo \"SAMO\" en las calles de Nueva York. Posteriormente se convirtió en uno de los artistas contemporáneos más influyentes, llevando la estética del graffiti a galerías y museos."
+        },
+        {
+            "name": "Keith Haring",
+            "ariaLabel": "Ver información sobre Keith Haring",
+            "portraitSrc": "../../assets/img/graffiti/galeria-artistas/retratos/keith-haring.jpg",
+            "portraitAlt": "Retrato referencial de Keith Haring",
+            "signatureSrc": "../../assets/img/graffiti/galeria-artistas/firmas/keith-haring.png",
+            "signatureAlt": "Firma de Keith Haring",
+            "description": "Artista estadounidense que combinó el arte pop con el graffiti, creando figuras icónicas simples y coloridas. Sus dibujos en el metro de Nueva York lo catapultaron a la fama internacional."
+        },
+        {
+            "name": "Banksy",
+            "ariaLabel": "Ver información sobre Banksy",
+            "portraitSrc": "../../assets/img/graffiti/galeria-artistas/retratos/banksy.jpg",
+            "portraitAlt": "Retrato referencial de Banksy",
+            "signatureSrc": "../../assets/img/graffiti/galeria-artistas/firmas/banksy.png",
+            "signatureAlt": "Firma de Banksy",
+            "description": "Artista callejero británico anónimo, maestro del stencil, conocido por sus obras satíricas y de crítica social y política. Sus intervenciones han aparecido en ciudades de todo el mundo y han alcanzado valores millonarios en subastas."
+        },
+        {
+            "name": "Lady Pink",
+            "ariaLabel": "Ver información sobre Lady Pink",
+            "portraitSrc": "../../assets/img/graffiti/galeria-artistas/retratos/lady-pink.jpg",
+            "portraitAlt": "Retrato referencial de Lady Pink",
+            "signatureSrc": "../../assets/img/graffiti/galeria-artistas/firmas/lady-pink.png",
+            "signatureAlt": "Firma de Lady Pink",
+            "description": "Una de las pocas mujeres pioneras del graffiti en Nueva York durante los años 80. Su trabajo ha sido fundamental para visibilizar la presencia femenina en un movimiento predominantemente masculino."
+        },
+        {
+            "name": "Os Gêmeos",
+            "ariaLabel": "Ver información sobre Os Gêmeos",
+            "portraitSrc": "../../assets/img/graffiti/galeria-artistas/retratos/os-gemeos.jpg",
+            "portraitAlt": "Retrato referencial de Os Gêmeos",
+            "signatureSrc": "../../assets/img/graffiti/galeria-artistas/firmas/os-gemeos.png",
+            "signatureAlt": "Firma de Os Gêmeos",
+            "description": "Dúo de hermanos brasileños de São Paulo, conocidos por sus murales coloridos de gran escala que incorporan elementos de la cultura brasileña, el surrealismo y la fantasía."
+        }
+    ],
+    "impacto": [
+        {
+            "modalId": "modalImpacto1",
+            "modalLabelId": "modalImpacto1Label",
+            "imageSrc": "../../assets/img/graffiti/impacto/cultura-urbana.png",
+            "imageAlt": "Graffiti en ciudad",
+            "modalTitle": "Graffiti y Ciudad",
+            "modalBody": "En la cultura urbana, el graffiti ha contribuido a definir la identidad visual de las ciudades modernas. Ha transformado espacios grises y deteriorados en galerías al aire libre, democratizando el acceso al arte y generando debates sobre la apropiación del espacio público. Ciudades como Berlín, Melbourne, São Paulo y Bogotá han abrazado el arte urbano como parte integral de su identidad cultural.",
+            "reference": {
+                "url": "https://www.journals.scholarpublishing.org/index.php/ASSRJ/article/view/19554",
+                "label": "Cultura urbana"
+            }
+        },
+        {
+            "modalId": "modalImpacto2",
+            "modalLabelId": "modalImpacto2Label",
+            "imageSrc": "../../assets/img/graffiti/impacto/movimientos.png",
+            "imageAlt": "Graffiti protesta social",
+            "modalTitle": "Graffiti y Protesta Social",
+            "modalBody": "En cuanto a los movimientos sociales, el graffiti ha servido como herramienta de protesta, resistencia y denuncia. Desde las revueltas estudiantiles de Mayo del 68 en París hasta las protestas de la Primavera Árabe, Black Lives Matter y movimientos feministas, el graffiti ha dado voz a los marginados y ha desafiado las estructuras de poder establecidas.",
+            "reference": {
+                "url": "https://ejournal1.unud.ac.id/index.php/ecs/article/view/2394",
+                "label": "Movimientos sociales"
+            }
+        },
+        {
+            "modalId": "modalImpacto3",
+            "modalLabelId": "modalImpacto3Label",
+            "imageSrc": "../../assets/img/graffiti/impacto/diseño.png",
+            "imageAlt": "Graffiti y diseño gráfico",
+            "modalTitle": "Graffiti y Diseño Gráfico",
+            "modalBody": "El impacto en el diseño gráfico es innegable. La estética del graffiti ha influido profundamente en el diseño de logotipos, publicidad, tipografía, moda y diseño de producto. Marcas reconocidas han colaborado con artistas de graffiti, y el estilo urbano se ha convertido en una referencia constante en la cultura visual contemporánea.",
+            "reference": {
+                "url": "https://journals.wisethorough.com/index.php/sauc/article/view/82",
+                "label": "Diseño gráfico"
+            }
+        },
+        {
+            "modalId": "modalImpacto4",
+            "modalLabelId": "modalImpacto4Label",
+            "imageSrc": "../../assets/img/graffiti/impacto/arte.png",
+            "imageAlt": "Graffiti en arte contemporáneo",
+            "modalTitle": "Graffiti en el Arte Contemporáneo",
+            "modalBody": "Finalmente, en el arte contemporáneo, el graffiti ha logrado ingresar a galerías, museos y colecciones privadas. Instituciones prestigiosas como el MoMA, la Tate Modern y el Museo de Arte Contemporáneo de Los Ángeles han exhibido obras de artistas urbanos, validando el graffiti como una forma legítima de expresión artística y reconociendo su valor histórico y cultural.",
+            "reference": {
+                "url": "https://www.mdpi.com/2076-0787/14/5/110",
+                "label": "Arte contemporáneo"
+            }
+        }
+    ]
+}
