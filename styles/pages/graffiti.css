@@ -462,6 +462,10 @@ body::-webkit-scrollbar {
 }
 
 /* Modales */
+.graffiti-modal {
+    box-shadow: none;
+}
+
 .graffiti-modal .modal-content {
     background-color: #00000000;
     background-image: url("../../assets/img/graffiti/modal/background.png");
@@ -471,7 +475,6 @@ body::-webkit-scrollbar {
 }
 
 .graffiti-modal .modal-header {
-    border-bottom: 1px solid #ffffff1a;
     padding: 22px 24px 14px;
 }
 
