@@ -88,7 +88,6 @@ body::-webkit-scrollbar {
     color: #fff3fb;
     font-size: 2.8rem;
     line-height: 1.1;
-    /* Borde sólido con text-shadow */
     text-shadow:
         2px 0 0 #000,
         -2px 0 0 #000,
@@ -99,6 +98,12 @@ body::-webkit-scrollbar {
         1.5px -1.5px 0 #000,
         -1.5px 1.5px 0 #000,
         5px 5px 5px #000;
+    text-align: center;
+}
+
+#que-es ~ p{
+    margin: 20px;
+    font-size: 1.5rem;
     text-align: center;
 }
 
@@ -142,24 +147,30 @@ body::-webkit-scrollbar {
 }
 
 .graffiti-card {
-    background: #00000050;
-    backdrop-filter: blur(30px);
-    border: 2px solid #00000030;
+    background-image: url("../../assets/img/graffiti/card/background.png");
+    background-color: #00000000;
+    background-size: 100% 100%;
+    background-position: center;
+    border: none;
     border-radius: 32px;
     overflow: hidden;
-    box-shadow: 0 18px 40px #00000030;
     transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
 }
 
 .graffiti-card:hover {
     transform: translateY(-6px) rotate(-0.5deg);
-    box-shadow: 0 24px 45px #00000050;
-    border-color: #ffffff30;
 }
 
 .graffiti-card-image {
-    height: 220px;
+    width: 80%;
+    height: 200px;
     object-fit: cover;
+    display: block;
+    margin: 50px auto 0 auto;
+    mask-image: url("../../assets/img/graffiti/card/clip.svg");
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    mask-position: center;
 }
 
 .graffiti-card .card-body {
@@ -172,31 +183,35 @@ body::-webkit-scrollbar {
     font-family: "graffiti-body", sans-serif;
     font-size: 1.8rem;
     line-height: 1.1;
-    text-shadow: 2px 2px 0 #00000070;
+    text-shadow: 2px 0 0 #000,
+                -2px 0 0 #000,
+                0 2px 0 #000,
+                0 -2px 0 #000,
+                1.5px 1.5px 0 #000,
+                -1.5px -1.5px 0 #000,
+                1.5px -1.5px 0 #000,
+                -1.5px 1.5px 0 #000,
+                5px 5px 5px #000;
 }
 
 .graffiti-card-button {
-    background: #111111d0;
-    color: #fff3fb;
-    border: 2px solid #ffffff25;
-    border-radius: 50%;
+    background-image: url("../../assets/img/graffiti/card/button.png");
+    background-size: 100% 100%;
+    color: #ffffff00;
     width: 52px;
     height: 52px;
     padding: 0;
-    font-weight: 700;
-    font-size: 2rem;
-    line-height: 1;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    filter: invert(0);
+    transform: scale(1);
+    transition: all 0.3s ease;
 }
 
-.graffiti-card-button:hover,
-.graffiti-card-button:focus,
-.graffiti-card-button:active {
-    background: #fff3fb;
-    color: #3f102e;
-    border-color: #fff3fb;
+.graffiti-card-button:hover {
+    color: #fff3fb00;
+    scale: 1.15;
+    filter: invert(1);
+    transform: scale(1.15);
+    transition: all 0.3s ease;
 }
 
 /* Tecnicas */
@@ -206,12 +221,14 @@ body::-webkit-scrollbar {
 }
 
 .graffiti-technique-panel {
-    background: #00000052;
-    backdrop-filter: blur(30px);
-    border: 2px solid #ffffff1f;
-    border-radius: 34px;
+    background-image: url("../../assets/img/graffiti/galeria/background.png");
+    background-size: 100% 100%;
+    background-position: center;
     overflow: hidden;
-    box-shadow: 0 20px 50px #00000035;
+    min-height: 380px;
+    height: 380px;
+    display: flex;
+    align-items: stretch;
 }
 
 .graffiti-technique-image {
@@ -220,18 +237,24 @@ body::-webkit-scrollbar {
     min-height: 340px;
     object-fit: cover;
     display: block;
+    mask-image: url("../../assets/img/graffiti/galeria/clip.svg");
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    mask-position: center;
 }
 
 .graffiti-technique-content {
     height: 100%;
-    padding: 36px;
+    padding: 36px 36px 36px 0px;
+    margin-left: -20px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    
 }
 
 .graffiti-technique-kicker {
-    color: #ffd7ee;
+    display: none;
     font-family: "graffiti-body", sans-serif;
     font-size: 0.9rem;
     font-weight: 700;
@@ -246,12 +269,20 @@ body::-webkit-scrollbar {
     font-family: "graffiti-body", sans-serif;
     font-size: 2.2rem;
     line-height: 1.05;
-    text-shadow: 2px 2px 0 #00000065;
+    text-shadow: 2px 0 0 #000,
+                -2px 0 0 #000,
+                0 2px 0 #000,
+                0 -2px 0 #000,
+                1.5px 1.5px 0 #000,
+                -1.5px -1.5px 0 #000,
+                1.5px -1.5px 0 #000,
+                -1.5px 1.5px 0 #000,
+                5px 5px 5px #000;
 }
 
 .graffiti-technique-content p {
     margin: 0;
-    color: #fff6fc;
+    color: #000000;
     font-size: 1.05rem;
     line-height: 1.8;
 }
@@ -280,8 +311,6 @@ body::-webkit-scrollbar {
     height: 54px;
     top: 50%;
     transform: translateY(-50%);
-    background: #111111c9;
-    border: 2px solid #ffffff22;
     border-radius: 50%;
     opacity: 1;
 }
@@ -294,15 +323,12 @@ body::-webkit-scrollbar {
     right: -10px;
 }
 
-.graffiti-carousel-control:hover,
-.graffiti-carousel-control:focus {
-    background: #fff3fb;
+.graffiti-carousel-control:hover {
+    filter:invert(1);
 }
 
 .graffiti-carousel-control:hover .carousel-control-prev-icon,
-.graffiti-carousel-control:hover .carousel-control-next-icon,
-.graffiti-carousel-control:focus .carousel-control-prev-icon,
-.graffiti-carousel-control:focus .carousel-control-next-icon {
+.graffiti-carousel-control:hover .carousel-control-next-icon {
     filter: invert(1);
 }
 
@@ -312,11 +338,10 @@ body::-webkit-scrollbar {
 }
 
 .graffiti-artist-card {
-    background: #00000052;
-    backdrop-filter: blur(30px);
-    border: 2px solid #ffffff1f;
+    mask-image: url("../../assets/img/graffiti/galeria/clip-artists.svg");
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
     border-radius: 32px;
-    box-shadow: 0 18px 40px #00000035;
     overflow: hidden;
     transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
 }
@@ -436,27 +461,13 @@ body::-webkit-scrollbar {
     filter: brightness(1.07) saturate(1.08);
 }
 
-.graffiti-modal-ref {
-    font-size: 0.95em;
-    color: #c9b6e6;
-    margin-top: 10px;
-    text-align: right;
-}
-
-.graffiti-modal-ref a {
-    color: #b48be2;
-    text-decoration: underline;
-    word-break: break-all;
-}
-
 /* Modales */
 .graffiti-modal .modal-content {
-    background: #160a14d9;
-    backdrop-filter: blur(32px);
-    border: 2px solid #ffffff1f;
-    border-radius: 34px;
-    color: #fff6fc;
-    box-shadow: 0 30px 60px #00000070;
+    background-color: #00000000;
+    background-image: url("../../assets/img/graffiti/modal/background.png");
+    background-size: 100% 100%;
+    background-position: center;
+    padding: 50px;
 }
 
 .graffiti-modal .modal-header {
@@ -465,11 +476,20 @@ body::-webkit-scrollbar {
 }
 
 .graffiti-modal .modal-title {
-    font-family: "graffiti-body", sans-serif;
+    font-family: var(--page-title-font);
     font-size: 2rem;
     line-height: 1.1;
     color: #fff3fb;
-    text-shadow: 2px 2px 0 #00000060;
+    text-shadow:
+        2px 0 0 #000,
+        -2px 0 0 #000,
+        0 2px 0 #000,
+        0 -2px 0 #000,
+        1.5px 1.5px 0 #000,
+        -1.5px -1.5px 0 #000,
+        1.5px -1.5px 0 #000,
+        -1.5px 1.5px 0 #000,
+        5px 5px 5px #000;
 }
 
 .graffiti-modal .modal-body {
@@ -479,8 +499,57 @@ body::-webkit-scrollbar {
     line-height: 1.7;
 }
 
+.graffiti-modal-ref {
+    font-size: 0.95em;
+    color: #ffffff;
+    margin-top: 10px;
+    margin-bottom: -50px;
+    text-align: right;
+        text-shadow:
+        2px 0 0 #000,
+        -2px 0 0 #000,
+        0 2px 0 #000,
+        0 -2px 0 #000,
+        1.5px 1.5px 0 #000,
+        -1.5px -1.5px 0 #000,
+        1.5px -1.5px 0 #000,
+        -1.5px 1.5px 0 #000,
+        5px 5px 5px #000;
+}
+
+.graffiti-modal-ref a {
+    color: #ffffff;
+    text-decoration: underline;
+    word-break: break-all;
+}
+
 .graffiti-modal .btn-close {
-    filter: invert(1) grayscale(1) brightness(200%);
+    background: none !important;
+    color: transparent !important;
+    text-shadow: none !important;
+    border: none !important;
+    opacity: 1 !important;
+    box-shadow: none !important;
+    margin-top: -70px;
+    margin-right: -20px;
+    transition: all 0.3s ease;
+}
+.graffiti-modal .btn-close::before,
+.graffiti-modal .btn-close::after {
+    display: none !important;
+    content: none !important;
+}
+
+.graffiti-modal .btn-close:hover,
+.graffiti-modal .btn-close:focus {
+    scale: 1.2;
+    transition: all 0.3s ease;
+}
+
+.graffiti-modal .btn-close:hover img,
+.graffiti-modal .btn-close:focus img {
+    filter: drop-shadow(2px 2px 0 white);
+    transition: all 0.3s ease;
 }
 
 .modal-backdrop.show {
@@ -589,9 +658,11 @@ body::-webkit-scrollbar {
     .graffiti-technique-image {
         min-height: clamp(210px, 31vw, 240px);
     }
+    
 
     .graffiti-technique-content {
-        padding: clamp(22px, 4vw, 26px) clamp(16px, 3vw, 26px);
+        padding: 20px;
+        margin-top: -40px;
     }
 
     .graffiti-technique-content h3 {
@@ -665,5 +736,15 @@ body::-webkit-scrollbar {
 
     .arte-vandalismo-col ul {
         font-size: 1.2rem;
+    }
+
+    .graffiti-technique-panel {
+        padding: 10%;
+        min-height: 600px;
+        height: 600px;
+    }
+    .graffiti-technique-image {
+        mask-image: url("../../assets/img/graffiti/card/clip.svg");
+        mask-size: 100% 100%;
     }
 }

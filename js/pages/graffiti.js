@@ -23,32 +23,32 @@ function renderHistoria(historia) {
         )
         .join("");
 
-    const modals = historia
-        .map(
-            (item) => `
-				<div class="modal fade" id="${escapeHtml(item.modalId)}" tabindex="-1" aria-labelledby="${escapeHtml(item.modalLabelId)}" aria-hidden="true">
-					<div class="modal-dialog modal-dialog-centered">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="${escapeHtml(item.modalLabelId)}">${escapeHtml(item.modalTitle)}</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-							</div>
-							<div class="modal-body">
-								${escapeHtml(item.modalBody)}
+		const modals = historia
+			.map(
+				(item) => `
+					<div class="modal fade graffiti-modal" id="${escapeHtml(item.modalId)}" tabindex="-1" aria-labelledby="${escapeHtml(item.modalLabelId)}" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="${escapeHtml(item.modalLabelId)}">${escapeHtml(item.modalTitle)}</h5>
+									<button type="button" class="btn-close custom-close" data-bs-dismiss="modal" aria-label="Cerrar">
+										<img src="../../assets/img/graffiti/modal/close.png" alt="Cerrar" width="50" height="50">
+									</button>
+								</div>
+								<div class="modal-body">
+									${escapeHtml(item.modalBody)}
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			`
-        )
-        .join("");
+				`
+			)
+			.join("");
 
     container.innerHTML = `
-		<h2>
-			<div class="historia-img-row">
-				${buttons}
-			</div>
-		</h2>
+		<div class="historia-img-row">
+			${buttons}
+		</div>
 		${modals}
 	`;
 }
@@ -76,15 +76,17 @@ function renderCaracteristicas(caracteristicas) {
         )
         .join("");
 
-    const modals = caracteristicas
-        .map(
-            (item) => `
+	const modals = caracteristicas
+		.map(
+			(item) => `
 				<div class="modal fade graffiti-modal" id="${escapeHtml(item.modalId)}" tabindex="-1" aria-labelledby="${escapeHtml(item.modalLabelId)}" aria-hidden="true">
 					<div class="modal-dialog modal-dialog-centered">
 						<div class="modal-content">
 							<div class="modal-header">
 								<h2 class="modal-title fs-4" id="${escapeHtml(item.modalLabelId)}">${escapeHtml(item.title)}</h2>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+								<button type="button" class="btn-close custom-close" data-bs-dismiss="modal" aria-label="Cerrar">
+									<img src="../../assets/img/graffiti/modal/close.png" alt="Cerrar" width="50" height="50">
+								</button>
 							</div>
 							<div class="modal-body">
 								<p>${escapeHtml(item.modalBody)}</p>
@@ -93,8 +95,8 @@ function renderCaracteristicas(caracteristicas) {
 					</div>
 				</div>
 			`
-        )
-        .join("");
+		)
+		.join("");
 
     cardsContainer.innerHTML = `
 		<div class="container-fluid px-0 graffiti-cards">
@@ -111,22 +113,14 @@ function renderTecnicas(tecnicas) {
     const container = document.getElementById("tecnicas-dynamic");
     if (!container) return;
 
-    const indicators = tecnicas
-        .map(
-            (item, index) => `
-				<button type="button" data-bs-target="#graffitiTechniquesCarousel" data-bs-slide-to="${index}"${index === 0 ? ' class="active" aria-current="true"' : ""} aria-label="Ver técnica ${escapeHtml(item.title)}"></button>
-			`
-        )
-        .join("");
-
-    const items = tecnicas
-        .map(
-            (item, index) => `
+	const items = tecnicas
+		.map(
+			(item, index) => `
 				<div class="carousel-item${index === 0 ? " active" : ""}">
 					<article class="graffiti-technique-panel">
 						<div class="row g-0 align-items-stretch">
 							<div class="col-12 col-lg-5">
-								<img src="${escapeHtml(item.imageSrc)}" class="graffiti-technique-image" alt="${escapeHtml(item.imageAlt)}">
+								<img src="${escapeHtml(item.imageSrc)}" class="graffiti-technique-image technique-image-large" alt="${escapeHtml(item.imageAlt)}">
 							</div>
 							<div class="col-12 col-lg-7">
 								<div class="graffiti-technique-content">
@@ -139,25 +133,20 @@ function renderTecnicas(tecnicas) {
 					</article>
 				</div>
 			`
-        )
-        .join("");
+		)
+		.join("");
 
-    container.innerHTML = `
+	container.innerHTML = `
 		<div id="graffitiTechniquesCarousel" class="carousel slide graffiti-techniques-carousel" data-bs-ride="false">
-			<div class="carousel-indicators graffiti-carousel-indicators">
-				${indicators}
-			</div>
-
 			<div class="carousel-inner">
 				${items}
 			</div>
-
 			<button class="carousel-control-prev graffiti-carousel-control" type="button" data-bs-target="#graffitiTechniquesCarousel" data-bs-slide="prev">
-				<span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				<img src="../../assets/img/graffiti/galeria/move.png" alt="Anterior" style="width:50px;height:50px;transform:none;">
 				<span class="visually-hidden">Anterior</span>
 			</button>
 			<button class="carousel-control-next graffiti-carousel-control" type="button" data-bs-target="#graffitiTechniquesCarousel" data-bs-slide="next">
-				<span class="carousel-control-next-icon" aria-hidden="true"></span>
+				<img src="../../assets/img/graffiti/galeria/move.png" alt="Siguiente" style="width:50px;height:50px;transform:rotate(180deg);">
 				<span class="visually-hidden">Siguiente</span>
 			</button>
 		</div>
@@ -168,28 +157,41 @@ function renderArtistas(artistas) {
     const container = document.getElementById("artistas-dynamic");
     if (!container) return;
 
-    const items = artistas
-        .map(
-            (artist) => `
+	const items = artistas
+		.map(
+			(artist, idx) => {
+				const modalId = `modalArtista${idx}`;
+				const modalLabelId = `modalArtista${idx}Label`;
+				return `
 				<div class="col">
-					<details class="graffiti-artist-card">
-						<summary class="graffiti-artist-trigger" aria-label="${escapeHtml(artist.ariaLabel)}">
-							<div class="graffiti-artist-visual">
-								<img src="${escapeHtml(artist.portraitSrc)}" class="graffiti-artist-portrait" alt="${escapeHtml(artist.portraitAlt)}">
-								<img src="${escapeHtml(artist.signatureSrc)}" class="graffiti-artist-signature" alt="${escapeHtml(artist.signatureAlt)}">
-							</div>
-						</summary>
-						<div class="graffiti-artist-copy">
-							<h3>${escapeHtml(artist.name)}</h3>
-							<p>${escapeHtml(artist.description)}</p>
+					<button type="button" class="btn p-0 graffiti-artist-card" data-bs-toggle="modal" data-bs-target="#${modalId}" aria-label="${escapeHtml(artist.ariaLabel)}" style="background:none;border:none;width:100%;">
+						<div class="graffiti-artist-visual">
+							<img src="${escapeHtml(artist.portraitSrc)}" class="graffiti-artist-portrait" alt="${escapeHtml(artist.portraitAlt)}">
+							<img src="${escapeHtml(artist.signatureSrc)}" class="graffiti-artist-signature" alt="${escapeHtml(artist.signatureAlt)}">
 						</div>
-					</details>
+					</button>
+					<div class="modal fade graffiti-modal" id="${modalId}" tabindex="-1" aria-labelledby="${modalLabelId}" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h2 class="modal-title fs-4" id="${modalLabelId}">${escapeHtml(artist.name)}</h2>
+									<button type="button" class="btn-close custom-close" data-bs-dismiss="modal" aria-label="Cerrar">
+										<img src="../../assets/img/graffiti/modal/close.png" alt="Cerrar" width="50" height="50">
+									</button>
+								</div>
+								<div class="modal-body">
+									<p>${escapeHtml(artist.description)}</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
-			`
-        )
-        .join("");
+				`;
+			}
+		)
+		.join("");
 
-    container.innerHTML = `
+	container.innerHTML = `
 		<div class="container-fluid px-0 graffiti-artists-gallery">
 			<div class="row g-4 row-cols-2 row-cols-lg-3">
 				${items}
@@ -212,29 +214,31 @@ function renderImpacto(impactos) {
         )
         .join("");
 
-    const modals = impactos
-        .map(
-            (item) => `
-				<div class="modal fade" id="${escapeHtml(item.modalId)}" tabindex="-1" aria-labelledby="${escapeHtml(item.modalLabelId)}" aria-hidden="true">
-					<div class="modal-dialog modal-dialog-centered">
-						<div class="modal-content">
-							<div class="modal-header">
-								<h5 class="modal-title" id="${escapeHtml(item.modalLabelId)}">${escapeHtml(item.modalTitle)}</h5>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
-							</div>
-							<div class="modal-body">
-								${escapeHtml(item.modalBody)}
-								<hr>
-								<div class="graffiti-modal-ref">
-									Referencia: <a href="${escapeHtml(item.reference.url)}" target="_blank">${escapeHtml(item.reference.label)}</a>
+		const modals = impactos
+			.map(
+				(item) => `
+					<div class="modal fade graffiti-modal" id="${escapeHtml(item.modalId)}" tabindex="-1" aria-labelledby="${escapeHtml(item.modalLabelId)}" aria-hidden="true">
+						<div class="modal-dialog modal-dialog-centered">
+							<div class="modal-content">
+								<div class="modal-header">
+									<h5 class="modal-title" id="${escapeHtml(item.modalLabelId)}">${escapeHtml(item.modalTitle)}</h5>
+									<button type="button" class="btn-close custom-close" data-bs-dismiss="modal" aria-label="Cerrar">
+										<img src="../../assets/img/graffiti/modal/close.png" alt="Cerrar" width="50" height="50">
+									</button>
+								</div>
+								<div class="modal-body">
+									${escapeHtml(item.modalBody)}
+									<hr>
+									<div class="graffiti-modal-ref">
+										Referencia: <a href="${escapeHtml(item.reference.url)}" target="_blank">${escapeHtml(item.reference.label)}</a>
+									</div>
 								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-			`
-        )
-        .join("");
+				`
+			)
+			.join("");
 
     container.innerHTML = `
 		<div class="impacto-img-grid">
