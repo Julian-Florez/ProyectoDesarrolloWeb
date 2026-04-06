@@ -1,3 +1,6 @@
+import { renderMap } from '../utils/maps.js';
+import { fetchWikipediaSummary } from '../utils/wikipedia.js';
+
 const GRAFFITI_DATA_URL = "../data/graffiti.json";
 
 function escapeHtml(value) {
@@ -154,41 +157,41 @@ function renderTecnicas(tecnicas) {
 }
 
 function renderArtistas(artistas) {
-    const container = document.getElementById("artistas-dynamic");
-    if (!container) return;
+	const container = document.getElementById("artistas-dynamic");
+	if (!container) return;
 
+	// Genera los modales y las tarjetas
 	const items = artistas
-		.map(
-			(artist, idx) => {
-				const modalId = `modalArtista${idx}`;
-				const modalLabelId = `modalArtista${idx}Label`;
-				return `
-				<div class="col">
-					<button type="button" class="btn p-0 graffiti-artist-card" data-bs-toggle="modal" data-bs-target="#${modalId}" aria-label="${escapeHtml(artist.ariaLabel)}" style="background:none;border:none;width:100%;">
-						<div class="graffiti-artist-visual">
-							<img src="${escapeHtml(artist.portraitSrc)}" class="graffiti-artist-portrait" alt="${escapeHtml(artist.portraitAlt)}">
-							<img src="${escapeHtml(artist.signatureSrc)}" class="graffiti-artist-signature" alt="${escapeHtml(artist.signatureAlt)}">
-						</div>
-					</button>
-					<div class="modal fade graffiti-modal" id="${modalId}" tabindex="-1" aria-labelledby="${modalLabelId}" aria-hidden="true">
-						<div class="modal-dialog modal-dialog-centered">
-							<div class="modal-content">
-								<div class="modal-header">
-									<h2 class="modal-title fs-4" id="${modalLabelId}">${escapeHtml(artist.name)}</h2>
-									<button type="button" class="btn-close custom-close" data-bs-dismiss="modal" aria-label="Cerrar">
-										<img src="../../assets/img/graffiti/modal/close.png" alt="Cerrar" width="50" height="50">
-									</button>
-								</div>
-								<div class="modal-body">
-									<p>${escapeHtml(artist.description)}</p>
-								</div>
+		.map((artist, idx) => {
+			const modalId = `modalArtista${idx}`;
+			const modalLabelId = `modalArtista${idx}Label`;
+			const wikipediaPage = artist.wikipediaPage || artist.name;
+			return `
+			<div class="col">
+				<button type="button" class="btn p-0 graffiti-artist-card" data-bs-toggle="modal" data-bs-target="#${modalId}" aria-label="${escapeHtml(artist.ariaLabel)}" style="background:none;border:none;width:100%;" data-wikipage="${escapeHtml(wikipediaPage)}" data-artistdesc="${escapeHtml(artist.description)}">
+					<div class="graffiti-artist-visual">
+						<img src="${escapeHtml(artist.portraitSrc)}" class="graffiti-artist-portrait" alt="${escapeHtml(artist.portraitAlt)}">
+						<img src="${escapeHtml(artist.signatureSrc)}" class="graffiti-artist-signature" alt="${escapeHtml(artist.signatureAlt)}">
+					</div>
+				</button>
+				<div class="modal fade graffiti-modal" id="${modalId}" tabindex="-1" aria-labelledby="${modalLabelId}" aria-hidden="true">
+					<div class="modal-dialog modal-dialog-centered">
+						<div class="modal-content">
+							<div class="modal-header">
+								<h2 class="modal-title fs-4" id="${modalLabelId}">${escapeHtml(artist.name)}</h2>
+								<button type="button" class="btn-close custom-close" data-bs-dismiss="modal" aria-label="Cerrar">
+									<img src="../../assets/img/graffiti/modal/close.png" alt="Cerrar" width="50" height="50">
+								</button>
+							</div>
+							<div class="modal-body" id="modalBody-${modalId}">
+								<p>${escapeHtml(artist.description)}</p>
 							</div>
 						</div>
 					</div>
 				</div>
-				`;
-			}
-		)
+			</div>
+			`;
+		})
 		.join("");
 
 	container.innerHTML = `
@@ -198,6 +201,166 @@ function renderArtistas(artistas) {
 			</div>
 		</div>
 	`;
+
+	// Añade listeners para cargar Wikipedia al abrir el modal usando el módulo genérico
+	setTimeout(() => {
+		const buttons = container.querySelectorAll(".graffiti-artist-card");
+		buttons.forEach((btn, idx) => {
+			btn.addEventListener("click", async () => {
+				const wikipediaPage = btn.getAttribute("data-wikipage");
+				const artistDesc = btn.getAttribute("data-artistdesc");
+				const modalId = `modalArtista${idx}`;
+				const modalBody = document.getElementById(`modalBody-${modalId}`);
+				if (!modalBody) return;
+				modalBody.innerHTML = '<div style="text-align:center"><span class="spinner-border"></span><br>Cargando información de Wikipedia...</div>';
+				try {
+					// Importa dinámicamente la función genérica
+					const { fetchWikipediaSummary } = await import('../utils/wikipedia.js');
+					const data = await fetchWikipediaSummary(wikipediaPage, { lang: 'es' });
+					if (!data) throw new Error('No encontrado');
+					let imgHtml = "";
+					if (data.image) {
+						imgHtml = `<div class="artist-modal-img mb-2"><img class="artist-modal-img-element" src="${escapeHtml(data.image)}" alt="Imagen de Wikipedia"></div>`;
+					}
+					modalBody.innerHTML = `
+						${imgHtml}
+						<p>${escapeHtml(data.extract)}</p>
+						<div style=\"font-size:0.9em;text-align:right;\">
+							<a href="${escapeHtml(data.url)}" target="_blank" rel="noopener">Ver en Wikipedia</a>
+						</div>
+					`;
+				} catch (e) {
+					modalBody.innerHTML = `<p>${escapeHtml(artistDesc)}</p><div style='color:#888;font-size:0.9em;'>No se pudo cargar información de Wikipedia.</div>`;
+				}
+			});
+		});
+	}, 0);
+}
+
+function renderObrasGallery(obras) {
+	const container = document.getElementById('obras-gallery');
+	if (!container) return;
+	const chunkSize = 3;
+	const slides = [];
+	for (let i = 0; i < obras.length; i += chunkSize) {
+		slides.push(obras.slice(i, i + chunkSize));
+	}
+
+	const carouselItems = slides.map((slide, slideIdx) => `
+		<div class="carousel-item${slideIdx === 0 ? ' active' : ''}">
+			<div class="row g-4 justify-content-center">
+				${slide.map((obra, idx) => {
+					const globalIdx = slideIdx * chunkSize + idx;
+					return `
+					<div class="col-12 col-md-6 col-lg-4 d-flex align-items-stretch obra-carousel-col">
+						<button type="button" class="btn p-0 obra-card w-100" data-bs-toggle="modal" data-bs-target="#modalObra${globalIdx}" data-idx="${globalIdx}" style="background:none;border:none;width:100%;">
+							<div class="obra-img-thumb" id="obraThumb${globalIdx}" style="height:180px;display:flex;align-items:center;justify-content:center;overflow:hidden">
+								<span class="spinner-border"></span>
+							</div>
+							<div class="obra-title">${escapeHtml(obra.name)}</div>
+						</button>
+						<div class="modal fade graffiti-modal" id="modalObra${globalIdx}" tabindex="-1" aria-labelledby="modalObra${globalIdx}Label" aria-hidden="true">
+							<div class="modal-dialog modal-lg modal-dialog-centered">
+								<div class="modal-content">
+									<div class="modal-header">
+										<h2 class="modal-title fs-4" id="modalObra${globalIdx}Label">${escapeHtml(obra.name)}</h2>
+										<button type="button" class="btn-close custom-close" data-bs-dismiss="modal" aria-label="Cerrar">
+											<img src="../../assets/img/graffiti/modal/close.png" alt="Cerrar" width="50" height="50">
+										</button>
+									</div>
+									<div class="modal-body">
+										<div class="row g-0">
+											<div class="col-12 col-md-6 p-3 d-flex flex-column justify-content-center">
+												<div id="obraDesc${globalIdx}"><span class="spinner-border"></span> Cargando...</div>
+											</div>
+											<div class="col-12 col-md-6 p-3">
+												<div class="obra-modal-img mb-2" id="obraImg${globalIdx}"><span class="spinner-border"></span></div>
+												<div id="obraMap${globalIdx}" style="width:100%;height:200px;border-radius:8px;overflow:hidden;"></div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				`;
+				}).join('')}
+			</div>
+		</div>
+	`).join('');
+
+	container.innerHTML = `
+		<div id="obrasCarousel" class="carousel slide graffiti-techniques-carousel" data-bs-ride="false">
+			<div class="carousel-inner">
+				${carouselItems}
+			</div>
+			<button class="carousel-control-prev graffiti-carousel-control" type="button" data-bs-target="#obrasCarousel" data-bs-slide="prev">
+				<img src="../../assets/img/graffiti/galeria/move.png" alt="Anterior" style="width:50px;height:50px;transform:none;">
+				<span class="visually-hidden">Anterior</span>
+			</button>
+			<button class="carousel-control-next graffiti-carousel-control" type="button" data-bs-target="#obrasCarousel" data-bs-slide="next">
+				<img src="../../assets/img/graffiti/galeria/move.png" alt="Siguiente" style="width:50px;height:50px;transform:rotate(180deg);">
+				<span class="visually-hidden">Siguiente</span>
+			</button>
+		</div>
+	`;
+
+	// Cargar imágenes de Wikipedia para thumbnails, con fallback a placeholder
+	obras.forEach(async (obra, idx) => {
+		const thumb = document.getElementById(`obraThumb${idx}`);
+		if (!thumb) return;
+		try {
+			const wiki = await fetchWikipediaSummary(obra.wikipediaPage, { lang: 'es' });
+			if (wiki && wiki.image) {
+				thumb.innerHTML = `<img src="${escapeHtml(wiki.image)}" alt="${escapeHtml(obra.name)}" style="width:100%;height:100%;object-fit:cover;">`;
+			} else if (obra.placeholderImg) {
+				thumb.innerHTML = `<img src="${escapeHtml(obra.placeholderImg)}" alt="${escapeHtml(obra.name)}" style="width:100%;height:100%;object-fit:cover;opacity:0.7;">`;
+			} else {
+				thumb.innerHTML = `<span style='color:#888;'>Sin imagen</span>`;
+			}
+		} catch (e) {
+			if (obra.placeholderImg) {
+				thumb.innerHTML = `<img src="${escapeHtml(obra.placeholderImg)}" alt="${escapeHtml(obra.name)}" style="width:100%;height:100%;object-fit:cover;opacity:0.7;">`;
+			} else {
+				thumb.innerHTML = `<span style='color:#888;'>Sin imagen</span>`;
+			}
+		}
+	});
+
+	// Listeners para cargar contenido del modal al abrir
+	container.querySelectorAll('.obra-card').forEach(btn => {
+		btn.addEventListener('click', async e => {
+			const idx = btn.getAttribute('data-idx');
+			const obra = obras[idx];
+			const descDiv = document.getElementById(`obraDesc${idx}`);
+			const imgDiv = document.getElementById(`obraImg${idx}`);
+			if (descDiv) descDiv.innerHTML = '<span class="spinner-border"></span> Cargando...';
+			if (imgDiv) imgDiv.innerHTML = '<span class="spinner-border"></span>';
+			// Info Wikipedia
+			let wiki = null;
+			try {
+				wiki = await fetchWikipediaSummary(obra.wikipediaPage, { lang: 'es' });
+			} catch (e) {
+				wiki = null;
+			}
+			if (descDiv) {
+				descDiv.innerHTML = wiki ? `<div><strong>${escapeHtml(wiki.title)}</strong></div><div>${escapeHtml(wiki.extract)}</div><div style='font-size:0.9em;text-align:right;'><a href="${escapeHtml(wiki.url)}" target="_blank">Ver en Wikipedia</a></div>` : '<span style="color:#888;">No se pudo cargar información.</span>';
+			}
+			if (imgDiv) {
+				if (wiki && wiki.image) {
+					imgDiv.innerHTML = `<img class="obra-modal-img-element" src="${escapeHtml(wiki.image)}" alt="${escapeHtml(obra.name)}">`;
+				} else if (obra.placeholderImg) {
+					imgDiv.innerHTML = `<img class="obra-modal-img-element" src="${escapeHtml(obra.placeholderImg)}" alt="${escapeHtml(obra.name)}" style="opacity:0.7;">`;
+				} else {
+					imgDiv.innerHTML = `<span style='color:#888;'>Sin imagen</span>`;
+				}
+			}
+			// Mapa
+			setTimeout(() => {
+				renderMap(`obraMap${idx}`, obra.lat, obra.lng, { markerTitle: obra.name });
+			}, 300);
+		});
+	});
 }
 
 function renderImpacto(impactos) {
@@ -262,6 +425,11 @@ async function initGraffitiPage() {
         renderTecnicas(data.tecnicas || []);
         renderArtistas(data.artistas || []);
         renderImpacto(data.impacto || []);
+
+		// Galería de obras
+		if (data.obras) {
+			renderObrasGallery(data.obras);
+		}
     } catch (error) {
         console.error("Error al cargar contenido dinamico de graffiti:", error);
     }

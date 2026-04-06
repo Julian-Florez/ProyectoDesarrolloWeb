@@ -126,7 +126,7 @@
             "portraitAlt": "Retrato referencial de TAKI 183",
             "signatureSrc": "../../assets/img/graffiti/galeria-artistas/firmas/taki-183.png",
             "signatureAlt": "Firma de TAKI 183",
-            "description": "Considerado uno de los pioneros del graffiti moderno en Nueva York durante principios de los años 70. Su firma apareció por toda la ciudad, inspirando a miles de jóvenes a seguir su ejemplo."
+            "wikipediaPage": "TAKI 183"
         },
         {
             "name": "Jean-Michel Basquiat",
@@ -135,7 +135,7 @@
             "portraitAlt": "Retrato referencial de Jean-Michel Basquiat",
             "signatureSrc": "../../assets/img/graffiti/galeria-artistas/firmas/jean-michel-basquiat.png",
             "signatureAlt": "Firma de Jean-Michel Basquiat",
-            "description": "Comenzó como escritor de graffiti bajo el seudónimo \"SAMO\" en las calles de Nueva York. Posteriormente se convirtió en uno de los artistas contemporáneos más influyentes, llevando la estética del graffiti a galerías y museos."
+            "wikipediaPage": "Jean-Michel Basquiat"
         },
         {
             "name": "Keith Haring",
@@ -144,7 +144,7 @@
             "portraitAlt": "Retrato referencial de Keith Haring",
             "signatureSrc": "../../assets/img/graffiti/galeria-artistas/firmas/keith-haring.png",
             "signatureAlt": "Firma de Keith Haring",
-            "description": "Artista estadounidense que combinó el arte pop con el graffiti, creando figuras icónicas simples y coloridas. Sus dibujos en el metro de Nueva York lo catapultaron a la fama internacional."
+            "wikipediaPage": "Keith Haring"
         },
         {
             "name": "Banksy",
@@ -153,7 +153,7 @@
             "portraitAlt": "Retrato referencial de Banksy",
             "signatureSrc": "../../assets/img/graffiti/galeria-artistas/firmas/banksy.png",
             "signatureAlt": "Firma de Banksy",
-            "description": "Artista callejero británico anónimo, maestro del stencil, conocido por sus obras satíricas y de crítica social y política. Sus intervenciones han aparecido en ciudades de todo el mundo y han alcanzado valores millonarios en subastas."
+            "wikipediaPage": "Banksy"
         },
         {
             "name": "Lady Pink",
@@ -162,7 +162,7 @@
             "portraitAlt": "Retrato referencial de Lady Pink",
             "signatureSrc": "../../assets/img/graffiti/galeria-artistas/firmas/lady-pink.png",
             "signatureAlt": "Firma de Lady Pink",
-            "description": "Una de las pocas mujeres pioneras del graffiti en Nueva York durante los años 80. Su trabajo ha sido fundamental para visibilizar la presencia femenina en un movimiento predominantemente masculino."
+            "wikipediaPage": "Lady Pink"
         },
         {
             "name": "Os Gêmeos",
@@ -171,9 +171,64 @@
             "portraitAlt": "Retrato referencial de Os Gêmeos",
             "signatureSrc": "../../assets/img/graffiti/galeria-artistas/firmas/os-gemeos.png",
             "signatureAlt": "Firma de Os Gêmeos",
-            "description": "Dúo de hermanos brasileños de São Paulo, conocidos por sus murales coloridos de gran escala que incorporan elementos de la cultura brasileña, el surrealismo y la fantasía."
+            "wikipediaPage": "OSGEMEOS"
         }
     ],
+
+        "obras": [
+        {
+            "name": "Balloon Girl",
+            "wikipediaPage": "Niña_con_globo",
+            "placeholderImg": "https://upload.wikimedia.org/wikipedia/en/7/77/Girl_with_balloon.jpg",
+            "lat": 51.5237,
+            "lng": -0.0877
+        },
+        {
+            "name": "Love is in the Air",
+            "wikipediaPage": "Lanzador_de_flores",
+            "placeholderImg": "https://www.singulart.com/blog/wp-content/uploads/2024/03/Love-is-in-the-air-1.png",
+            "lat": 31.7683,
+            "lng": 35.2137
+        },
+        {
+            "name": "Crack is Wack",
+            "wikipediaPage": "Crack_is_Wack",
+            "placeholderImg": "../../assets/img/graffiti/obras/crack-is-wack.jpg",
+            "lat": 40.7941,
+            "lng": -73.9346
+        },
+
+        {
+            "name": "Tuttomondo",
+            "wikipediaPage": "Tuttomondo",
+            "placeholderImg": "../../assets/img/graffiti/obras/tuttomondo.jpg",
+            "lat": 43.7159,
+            "lng": 10.4017
+        },
+
+        {
+            "name": "5Pointz",
+            "wikipediaPage": "5Pointz",
+            "placeholderImg": "../../assets/img/graffiti/obras/5pointz.jpg",
+            "lat": 40.7440,
+            "lng": -73.9489
+        },
+        {
+            "name": "Obey Giant",
+            "wikipediaPage": "Andre_the_Giant_Has_a_Posse",
+            "placeholderImg": "../../assets/img/graffiti/obras/obey-giant.jpg",
+            "lat": 34.0522,
+            "lng": -118.2437
+        },
+        {
+            "name": "Kissing Coppers",
+            "wikipediaPage": "Kissing_Coppers",
+            "placeholderImg": "https://static.theclinic.cl/media/2014/02/kissing-coppers-banksy-e1392852805553.jpg",
+            "lat": 50.8225,
+            "lng": -0.1372
+        }
+    ],
+
     "impacto": [
         {
             "modalId": "modalImpacto1",
