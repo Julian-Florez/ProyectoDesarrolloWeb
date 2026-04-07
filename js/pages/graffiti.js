@@ -3,6 +3,45 @@ import { fetchWikipediaSummary } from '../utils/wikipedia.js';
 
 const GRAFFITI_DATA_URL = "../data/graffiti.json";
 
+let graffitiDataReady = false;
+let graffitiWindowLoaded = document.readyState === "complete";
+
+function hideGraffitiLoader() {
+	const loader = document.getElementById("graffiti-loader");
+	if (loader) {
+		loader.classList.add("is-hidden");
+	}
+	document.body.classList.remove("is-loading");
+}
+
+function maybeHideGraffitiLoader() {
+	if (graffitiDataReady && graffitiWindowLoaded) {
+		hideGraffitiLoader();
+	}
+}
+
+function waitForImagesToLoad() {
+	const images = Array.from(document.images).filter((img) => !img.complete);
+	if (!images.length) {
+		return Promise.resolve();
+	}
+
+	return Promise.all(
+		images.map(
+			(img) =>
+				new Promise((resolve) => {
+					img.addEventListener("load", resolve, { once: true });
+					img.addEventListener("error", resolve, { once: true });
+				})
+		)
+	);
+}
+
+window.addEventListener("load", () => {
+	graffitiWindowLoaded = true;
+	maybeHideGraffitiLoader();
+});
+
 function escapeHtml(value) {
     return String(value)
         .replace(/&/g, "&amp;")
@@ -160,7 +199,6 @@ function renderArtistas(artistas) {
 	const container = document.getElementById("artistas-dynamic");
 	if (!container) return;
 
-	// Genera los modales y las tarjetas
 	const items = artistas
 		.map((artist, idx) => {
 			const modalId = `modalArtista${idx}`;
@@ -202,7 +240,6 @@ function renderArtistas(artistas) {
 		</div>
 	`;
 
-	// Añade listeners para cargar Wikipedia al abrir el modal usando el módulo genérico
 	setTimeout(() => {
 		const buttons = container.querySelectorAll(".graffiti-artist-card");
 		buttons.forEach((btn, idx) => {
@@ -214,7 +251,6 @@ function renderArtistas(artistas) {
 				if (!modalBody) return;
 				modalBody.innerHTML = '<div style="text-align:center"><span class="spinner-border"></span><br>Cargando información de Wikipedia...</div>';
 				try {
-					// Importa dinámicamente la función genérica
 					const { fetchWikipediaSummary } = await import('../utils/wikipedia.js');
 					const data = await fetchWikipediaSummary(wikipediaPage, { lang: 'es' });
 					if (!data) throw new Error('No encontrado');
@@ -237,7 +273,7 @@ function renderArtistas(artistas) {
 	}, 0);
 }
 
-function renderObrasGallery(obras) {
+async function renderObrasGallery(obras) {
 	const container = document.getElementById('obras-gallery');
 	if (!container) return;
 	const chunkSize = 3;
@@ -305,8 +341,7 @@ function renderObrasGallery(obras) {
 		</div>
 	`;
 
-	// Cargar imágenes de Wikipedia para thumbnails, con fallback a placeholder
-	obras.forEach(async (obra, idx) => {
+	const thumbTasks = obras.map(async (obra, idx) => {
 		const thumb = document.getElementById(`obraThumb${idx}`);
 		if (!thumb) return;
 		try {
@@ -327,7 +362,8 @@ function renderObrasGallery(obras) {
 		}
 	});
 
-	// Listeners para cargar contenido del modal al abrir
+	await Promise.all(thumbTasks);
+
 	container.querySelectorAll('.obra-card').forEach(btn => {
 		btn.addEventListener('click', async e => {
 			const idx = btn.getAttribute('data-idx');
@@ -336,7 +372,7 @@ function renderObrasGallery(obras) {
 			const imgDiv = document.getElementById(`obraImg${idx}`);
 			if (descDiv) descDiv.innerHTML = '<span class="spinner-border"></span> Cargando...';
 			if (imgDiv) imgDiv.innerHTML = '<span class="spinner-border"></span>';
-			// Info Wikipedia
+
 			let wiki = null;
 			try {
 				wiki = await fetchWikipediaSummary(obra.wikipediaPage, { lang: 'es' });
@@ -355,7 +391,7 @@ function renderObrasGallery(obras) {
 					imgDiv.innerHTML = `<span style='color:#888;'>Sin imagen</span>`;
 				}
 			}
-			// Mapa
+
 			setTimeout(() => {
 				renderMap(`obraMap${idx}`, obra.lat, obra.lng, { markerTitle: obra.name });
 			}, 300);
@@ -426,12 +462,20 @@ async function initGraffitiPage() {
         renderArtistas(data.artistas || []);
         renderImpacto(data.impacto || []);
 
-		// Galería de obras
 		if (data.obras) {
-			renderObrasGallery(data.obras);
+			await renderObrasGallery(data.obras);
 		}
+
+		await waitForImagesToLoad();
     } catch (error) {
         console.error("Error al cargar contenido dinamico de graffiti:", error);
+    } finally {
+		graffitiDataReady = true;
+		maybeHideGraffitiLoader();
+
+		if (!graffitiWindowLoaded) {
+			window.setTimeout(hideGraffitiLoader, 6000);
+		}
     }
 }
 

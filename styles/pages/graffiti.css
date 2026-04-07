@@ -23,6 +23,71 @@ body::-webkit-scrollbar {
     display: none;
 }
 
+body.is-loading {
+    overflow: hidden;
+}
+
+#graffiti-loader {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background:
+        #101010;
+    transition: opacity 0.45s ease, visibility 0.45s ease;
+}
+
+#graffiti-loader.is-hidden {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+}
+
+.graffiti-loader-inner {
+    width: min(460px, calc(100vw - 32px));
+    min-height: 220px;
+    padding: 28px 20px;
+    border-radius: 28px;
+    background: #00000099;
+    backdrop-filter: blur(8px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 14px;
+    text-align: center;
+}
+
+.graffiti-loader-logo {
+    width: min(320px, 70vw);
+    height: auto;
+}
+
+.graffiti-loader-spinner {
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    border: 5px solid #ffffff40;
+    border-top-color: #fff3fb;
+    animation: graffiti-loader-spin 0.85s linear infinite;
+}
+
+.graffiti-loader-inner p {
+    margin: 0;
+    font-family: "graffiti-body", sans-serif;
+    color: #fff3fb;
+    font-size: 1.35rem;
+    text-shadow: 2px 2px 0 #000;
+}
+
+@keyframes graffiti-loader-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
 /* Encabezado */
 .header-image {
     width: 60%;
@@ -770,7 +835,7 @@ body::-webkit-scrollbar {
     text-shadow: #000 5px 5px 5px;
 }
 
-/* Responsive unico */
+
 @media (max-width: 768px) {
     .header-image {
         width: 100%;

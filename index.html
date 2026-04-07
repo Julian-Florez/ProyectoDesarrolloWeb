@@ -14,7 +14,7 @@
         <ul id="navbar">
             <li><a href="./content/extras/info.html">&#xf05a</a></li>
             <li><a href="./content/extras/games.html">&#xf11b</a></li>
-            <li><a href="">&#xf074</a></li>
+            <li><a href="#" id="random-page-link" aria-label="Ir a una pagina aleatoria">&#xf074</a></li>
             <li><a href="https://github.com/Julian-Florez/ProyectoDesarrolloWeb">&#xf02a4</a></li>
         </ul>
     </div>
@@ -32,5 +32,27 @@
             <li id="menu-ukiyoe-li"><a href="./content/pages/ukiyoe.html" id="menu-ukiyoe" class="menu-item">UKIYO-E<img src="./assets/img/ukiyoe/icon.svg" alt=""></a></li>
         </ul>
     </div>
+
+    <details id="feedback-widget">
+        <summary aria-label="Abrir formulario de sugerencias" title="Enviar sugerencia">&#xf0e0;</summary>
+        <form id="feedback-form" autocomplete="on">
+            <h2>Comparte tu sugerencia</h2>
+
+            <label for="feedback-name">Nombre</label>
+            <input id="feedback-name" name="name" type="text" placeholder="Tu nombre" required>
+
+            <label for="feedback-email">Email</label>
+            <input id="feedback-email" name="email" type="email" placeholder="tu@email.com" required>
+
+            <label for="feedback-message">Sugerencia</label>
+            <textarea id="feedback-message" name="message" rows="5" placeholder="Escribe aqui tu sugerencia..." required></textarea>
+
+            <button type="submit">Enviar</button>
+            <p id="feedback-status" aria-live="polite"></p>
+        </form>
+    </details>
+
+    <script src="./js/shared/feedback-api.js" defer></script>
+    <script src="./js/shared/random-page.js" defer></script>
 </body>
 </html>
